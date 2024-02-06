@@ -10,10 +10,16 @@ function App() {
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
+    // Set Body element colours
+    if(!darkMode) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
   };
 
   return (
-    <div className={`App ${darkMode ? 'dark' : '' }`}>
+    <div className={`App`}>
       <Header darkModeCallback={toggleDarkMode}>
         <a href='/'>Home</a>
         <a href='/'>About</a>

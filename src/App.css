@@ -14,14 +14,16 @@
 }
 
 body {
+  background: var(--alice-blue) !important;
+  color: var(--obsidian-black) !important;
   font-family: var(--font-rubik), monospace;
   font-size: var(--font-size);
 }
 
-.App {
+/* .App {
   background: var(--alice-blue) !important;
   color: var(--obsidian-black) !important;
-}
+} */
 
 header {
   position: fixed;
