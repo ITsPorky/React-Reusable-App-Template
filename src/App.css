@@ -1,4 +1,5 @@
 :root {
+  --font-size: 14px;
   --font-rubik-mono: "Rubik Mono One", monospace;
   --font-rubik: "Rubik", sans-serif;
   --font-icons: "Font Awesome 6 Free";
@@ -13,18 +14,47 @@
 }
 
 body {
-  background: var(--alice-blue) !important;
-  color: var(--obsidian-black) !important;
   font-family: var(--font-rubik), monospace;
-  font-size: 14px;
+  font-size: var(--font-size);
 }
 
+.App {
+  background: var(--alice-blue) !important;
+  color: var(--obsidian-black) !important;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background: var(--alice-blue) !important;
+  color: var(--obsidian-black) !important;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+/* Dark Mode */
 .dark {
   background: var(--github-grey) !important;
   color: var(--alice-blue) !important;
-  font-family: var(--font-rubik), monospace;
-  font-size: 14px;
 }
+
+.dark header,
+.dark .mobile-drawer {
+  background: var(--github-grey) !important;
+  color: var(--alice-blue) !important;
+}
+
+/* START demo page styles (Only for testing) REMOVE START */
+
+.test-outline {
+  border: 1px solid var(--obsidian-black);
+}
+
+.dark .test-outline {
+  border: 1px solid var(--alice-blue);
+}
+
+/* END demo page styles (Only for testing) REMOVE END */
 
 main {
   padding-top: 70px;
@@ -60,22 +90,9 @@ h6 {
 
 /* NavDrawerMenu Styles */
 
-header {
-  position: fixed;
-  width: 100%;
-  background: var(--github-grey);
-  z-index: 999;
-}
-
-.app-logo {
+.logo {
   width: 100%;
   max-width: 80px;
-}
-
-.nav-link {
-  width: 100%;
-  text-align: center;
-  font-weight: 500;
 }
 
 .nav-menu-toggle-container {
@@ -87,6 +104,7 @@ header {
 }
 
 .nav-menu-items.mobile {
+  font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,13 +114,12 @@ header {
 }
 
 .mobile-drawer {
-  display: block;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  background: var(--github-grey);
-  color: #fff;
+  background: var(--alice-blue) !important;
+  color: var(--obsidian-black) !important;
   width: 80%;
   transform: translateX(100%);
   transition: .2s ease-in-out;

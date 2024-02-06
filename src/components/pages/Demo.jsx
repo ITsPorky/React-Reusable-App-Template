@@ -37,9 +37,9 @@ const Demo = () => {
           </Column>
         </Row>
       </Section>
-      <FullSection id="FullSection2" Style="border: 1px solid #fff">
-        <Row direction="row" Style="border: 1px solid #fff">
-          <Column className="text-center" Style="border: 1px solid #fff">
+      <FullSection id="FullSection2" className="test-outline">
+        <Row direction="row" className="test-outline">
+          <Column className="text-center test-outline">
             <h1>Component and Style Examples</h1>
             <p>
               This Page showcases each component and styles.
@@ -47,9 +47,9 @@ const Demo = () => {
           </Column>
         </Row>
       </FullSection>
-      <Section id="Section2" Style="border: 1px solid #fff">
-        <Row direction="row" Style="border: 1px solid #fff">
-          <Column className="text-center" Style="border: 1px solid #fff">
+      <Section id="Section2" className="test-outline">
+        <Row direction="row" className="test-outline">
+          <Column className="text-center test-outline">
             <h2>Column 1</h2>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -64,7 +64,7 @@ const Demo = () => {
               Lorem Ipsum.
             </p>
           </Column>
-          <Column className="text-center" Style="border: 1px solid #fff">
+          <Column className="text-center test-outline">
             <h2>Column 2</h2>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -81,9 +81,9 @@ const Demo = () => {
           </Column>
         </Row>
       </Section>
-      <Section id="Section3" Style="border: 1px solid #fff">
-        <Row direction="row" Style="border: 1px solid #fff">
-          <Column className="text-center m-auto" Style="border: 1px solid #fff">
+      <Section id="Section3" className="test-outline">
+        <Row direction="row" className="test-outline">
+          <Column className="text-center test-outline">
             <h2>Column 1</h2>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -98,7 +98,7 @@ const Demo = () => {
               Lorem Ipsum.
             </p>
           </Column>
-          <Column className="text-center m-auto" Style="border: 1px solid #fff">
+          <Column className="text-center test-outline">
             <h2>Column 2</h2>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -113,7 +113,7 @@ const Demo = () => {
               Lorem Ipsum.
             </p>
           </Column>
-          <Column className="text-center m-auto" Style="border: 1px solid #fff">
+          <Column className="text-center test-outline">
             <h2>Column 3</h2>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
