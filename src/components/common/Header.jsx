@@ -1,4 +1,7 @@
 import React, { Children, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import Logo from '../../logo.svg';
 
 const Header = ({ props, children }) => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -11,9 +14,9 @@ const Header = ({ props, children }) => {
     <header className="py-1.5">
       {/* Desktop Menu */}
       <nav className="nav-menu flex w-full h-auto justify-between items-center">
-        <div className="px-5">
+        <div>
           <a href="/">
-            <img src="" alt="App Logo" Style="max-width: 80px" />
+            <img src={Logo} alt="App Logo" className="app-logo" Style="max-width: 80px" />
           </a>
         </div>
         <ul className="nav-menu-items hidden md:flex flex-row px-5">
@@ -23,7 +26,7 @@ const Header = ({ props, children }) => {
         </ul>
         <div className="nav-menu-toggle-container block md:hidden px-5">
           <div className="nav-menu-toggle" onClick={toggleDrawer}>
-            <span class="material-symbols-outlined">menu</span>
+            <FontAwesomeIcon icon={faBars} fontSize={28}/>
           </div>
         </div>
       </nav>
@@ -31,16 +34,16 @@ const Header = ({ props, children }) => {
       <div
         className={`mobile-drawer ${
           isDrawerOpen ? "open" : ""
-        } fixed top-0 right-0 w-4/5 md:w-2/5`}
+        }`}
       >
         <div className="nav-menu-toggle-container mobile">
           <div className="nav-menu-toggle mobile" onClick={toggleDrawer}>
-            <span class="material-symbols-outlined">close</span>
+            <FontAwesomeIcon icon={faXmark} fontSize={28} />
           </div>
         </div>
         <ul className="nav-menu-items mobile" onClick={toggleDrawer}>
           {Children.map(children, child => {
-            return <li>{child}</li>;
+            return <li className="w-full">{child}</li>;
           })}
         </ul>
       </div>
