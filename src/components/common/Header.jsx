@@ -32,12 +32,12 @@ const Header = ({ children, darkModeCallback }) => {
         </ul>
         <div className="flex flex-row">
           <div className="nav-darkmode-toggle-container block px-5">
-            <div className="nav-darkmode-toggle" onClick={darkModeCallback}>
+            <div className="nav-darkmode-toggle p-2 cursor-pointer" onClick={darkModeCallback}>
               <FontAwesomeIcon icon={faCircleHalfStroke} fontSize={18}/>
             </div>
           </div>
           <div className="nav-menu-toggle-container block md:hidden px-5">
-            <div className="nav-menu-toggle" onClick={toggleDrawer}>
+            <div className="nav-menu-toggle p-2 cursor-pointer" onClick={toggleDrawer}>
               <FontAwesomeIcon icon={faBars} fontSize={20}/>
             </div>
           </div>
