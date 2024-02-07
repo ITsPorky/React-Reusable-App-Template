@@ -20,11 +20,6 @@ body {
   font-size: var(--font-size);
 }
 
-/* .App {
-  background: var(--alice-blue) !important;
-  color: var(--obsidian-black) !important;
-} */
-
 header {
   position: fixed;
   width: 100%;
@@ -102,7 +97,10 @@ h6 {
 }
 
 .nav-menu-toggle-container .mobile {
-  margin: 15px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
 }
 
 .nav-menu-items.mobile {
@@ -110,9 +108,14 @@ h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1em;
-  margin: 2em 0;
-  height: 50%;
+  padding: 0 1em;
+  height: 100%;
+}
+
+.nav-menu-items.mobile a {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0;
 }
 
 .mobile-drawer {
