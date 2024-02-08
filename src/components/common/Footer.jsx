@@ -62,7 +62,7 @@ const Footer = () => {
         </Row>
       </Section>
       <Section>
-        <Row className="p-0 py-1">
+        <Row className="pt-0 pb-2">
             <Column className="text-center p-0">
                 <small>React Template © {currentYear} Wade Walsh</small>
             </Column>
