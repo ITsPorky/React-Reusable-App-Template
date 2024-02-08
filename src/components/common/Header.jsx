@@ -51,8 +51,8 @@ const Header = ({ children, darkModeCallback }) => {
           isDrawerOpen ? "open" : ""
         } md:hidden`}
       >
-        <div className="nav-menu-toggle-container mobile">
-          <div className="nav-menu-toggle mobile py-1.5" onClick={toggleDrawer}>
+        <div className="nav-menu-toggle-container mobile py-1.5">
+          <div className="nav-menu-toggle mobile" onClick={toggleDrawer}>
             <FontAwesomeIcon icon={faXmark} fontSize={20} />
           </div>
         </div>
