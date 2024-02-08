@@ -2,7 +2,7 @@ import React, { Children, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark, faCircleHalfStroke } from "@fortawesome/free-solid-svg-icons";
 import Logo from '../../logo.svg';
-import Menu from "./Menu";
+// import Menu from "./Menu";
 
 const Header = ({ children, darkModeCallback }) => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);

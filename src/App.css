@@ -29,6 +29,11 @@ header {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
+footer {
+  color: var(--obsidian-black);
+  background: var(--alice-blue);
+}
+
 /* Dark Mode */
 .dark {
   background: var(--github-grey) !important;
@@ -36,6 +41,7 @@ header {
 }
 
 .dark header,
+.dark footer,
 .dark .mobile-drawer {
   background: var(--github-grey) !important;
   color: var(--alice-blue) !important;

@@ -8,11 +8,12 @@ import Image from "./Image";
 import Logo from "../../logo.svg";
 
 const Footer = () => {
+    let currentYear = new Date().getFullYear();
   return (
     <footer id="Footer">
       <Section>
         <Row className="flex-row">
-          <Column className="md:w-1/2">
+          <Column className="md:w-1/2 flex-row">
             <Image src={Logo} alt="Logo" Style='max-width: 100px;' />
             <p>React Template</p>
           </Column>
@@ -58,6 +59,13 @@ const Footer = () => {
               </li>
             </ul>
           </Column>
+        </Row>
+      </Section>
+      <Section>
+        <Row className="p-0 py-1">
+            <Column className="text-center p-0">
+                <small>React Template © {currentYear} Wade Walsh</small>
+            </Column>
         </Row>
       </Section>
     </footer>
