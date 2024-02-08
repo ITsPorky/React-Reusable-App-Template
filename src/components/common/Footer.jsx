@@ -12,12 +12,12 @@ const Footer = () => {
   return (
     <footer id="Footer">
       <Section>
-        <Row className="flex-row">
-          <Column className="md:w-1/2 flex-row">
+        <Row>
+          <Column className="">
             <Image src={Logo} alt="Logo" Style='max-width: 100px;' />
             <p>React Template</p>
           </Column>
-          <Column className="w-1/2">
+          <Column className="!w-1/2 md:!w-full">
             <h6>Quick Links</h6>
             <ul>
               <li>
@@ -31,7 +31,7 @@ const Footer = () => {
               </li>
             </ul>
           </Column>
-          <Column className="w-1/2">
+          <Column className="!w-1/2 md:!w-full">
             <h6>Other Links</h6>
             <ul>
               <li>
@@ -45,7 +45,7 @@ const Footer = () => {
               </li>
             </ul>
           </Column>
-          <Column className="md:w-1/2">
+          <Column className="">
             <h6>Contact</h6>
             <ul>
               <li>
