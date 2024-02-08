@@ -1,22 +1,27 @@
 :root {
   --font-size: 14px;
-  --font-rubik-mono: "Rubik Mono One", monospace;
-  --font-rubik: "Rubik", sans-serif;
+  --font-primary: "Rubik Mono One", monospace;
+  --font-secondary: "Rubik", sans-serif;
   --font-icons: "Font Awesome 6 Free";
-  --github-grey: #161b22;
-  --obsidian-black: #0B1215;
-  --deep-navy-blue: #011222;
-  --rich-black: #020d19;
-  --off-white: #fbfbfb;
-  --ghost-white: #f8f8ff;
-  --alice-blue: #f0f8ff;
-  --branding-blue: #4ab3fd;
+  --dark-bg: #161b22;
+  --dark-text: #0B1215;
+  --light-bg: #f0f8ff;
+  --light-text: #f0f8ff; 
+  --accent: #4ab3fd;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body, header, footer {
+  transition: .3s ease-in-out;
 }
 
 body {
-  background: var(--alice-blue) !important;
-  color: var(--obsidian-black) !important;
-  font-family: var(--font-rubik), monospace;
+  background: var(--light-bg) !important;
+  color: var(--dark-text) !important;
+  font-family: var(--font-secondary), monospace;
   font-size: var(--font-size);
 }
 
@@ -24,37 +29,37 @@ header {
   position: fixed;
   width: 100%;
   z-index: 999;
-  background: var(--alice-blue) !important;
-  color: var(--obsidian-black) !important;
+  background: var(--light-bg) !important;
+  color: var(--dark-text) !important;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 footer {
-  color: var(--obsidian-black);
-  background: var(--alice-blue);
+  color: var(--dark-text);
+  background: var(--light-bg);
 }
 
 /* Dark Mode */
 .dark {
-  background: var(--github-grey) !important;
-  color: var(--alice-blue) !important;
+  background: var(--dark-bg) !important;
+  color: var(--light-text) !important;
 }
 
 .dark header,
 .dark footer,
 .dark .mobile-drawer {
-  background: var(--github-grey) !important;
-  color: var(--alice-blue) !important;
+  background: var(--dark-bg) !important;
+  color: var(--light-text) !important;
 }
 
 /* START demo page styles (Only for testing) REMOVE START */
 
 .test-outline {
-  border: 1px solid var(--obsidian-black);
+  border: 1px solid var(--dark-text);
 }
 
 .dark .test-outline {
-  border: 1px solid var(--alice-blue);
+  border: 1px solid var(--light-bg);
 }
 
 /* END demo page styles (Only for testing) REMOVE END */
@@ -64,7 +69,7 @@ main {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: var(--font-rubik-mono), monospace;
+  font-family: var(--font-primary), monospace;
 }
 
 h1 {
@@ -76,7 +81,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.45rem;
+  font-size: 1.50rem;
 }
 
 h4 {
@@ -84,11 +89,11 @@ h4 {
 }
 
 h5 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 
 h6 {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 a:hover {
@@ -133,8 +138,8 @@ a:hover {
   top: 0;
   right: 0;
   bottom: 0;
-  background: var(--alice-blue) !important;
-  color: var(--obsidian-black) !important;
+  background: var(--light-bg) !important;
+  color: var(--dark-text) !important;
   width: 80%;
   transform: translateX(100%);
   transition: .2s ease-in-out;
