@@ -11,7 +11,7 @@ const FullSection = ({
   return (
     <section
       id={id}
-      className={`block m-auto mx-5 ${className}`}
+      className={`block m-auto ${className}`}
       Style={Style}
     >
       {Children.map(children, (child) => {
