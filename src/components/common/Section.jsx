@@ -9,7 +9,7 @@ const Section = ({
   return (
     <section
       id={id}
-      className={`block max-w-screen-xl m-auto px-5 ${className}`}
+      className={`block max-w-screen-xl m-auto mx-5 ${className}`}
       Style={Style}
     >
       {Children.map(children, (child) => {

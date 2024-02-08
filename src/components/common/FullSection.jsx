@@ -4,12 +4,14 @@ const FullSection = ({
   children,
   id,
   Style,
-  className = "",
+  className = '',
+  backgroundColor = '',
+  backgroundImage = '',
 }) => {
   return (
     <section
       id={id}
-      className={`block m-auto px-5 ${className}`}
+      className={`block m-auto mx-5 ${className}`}
       Style={Style}
     >
       {Children.map(children, (child) => {

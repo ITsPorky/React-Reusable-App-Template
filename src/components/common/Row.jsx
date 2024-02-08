@@ -9,7 +9,7 @@ const Row = ({
   return (
     <div
       id={id}
-      className={`flex flex-col md:flex-row py-10 ${className}`}
+      className={`flex flex-row flex-wrap md:flex-nowrap py-10 ${className}`}
       Style={Style}
     >
       {Children.map(children, (child) => {

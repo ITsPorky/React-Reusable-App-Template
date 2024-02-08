@@ -3,6 +3,8 @@ import Section from "../common/Section";
 import Row from "../common/Row";
 import Column from "../common/Column";
 import FullSection from "../common/FullSection";
+import Image from "../common/Image";
+import Logo from '../../logo.svg';
 
 const Home = () => {
   return (
@@ -10,6 +12,7 @@ const Home = () => {
       <FullSection id="Section1">
         <Row direction="row">
           <Column className="text-center">
+            <Image src={Logo} alt='React Logo' className='m-auto' Style='max-width: 150px;' />
             <h1>Page Title</h1>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
