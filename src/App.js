@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, Navigate } from "react-router-dom";
 import './App.css';
 import Header from './components/common/Header';
+import Footer from './components/common/Footer';
 import Demo from './components/pages/Demo';
 import Home from './components/pages/Home';
 
@@ -42,12 +43,13 @@ function App() {
         </Header>
         <main>
           <Routes>
-            <Route path='/' Component={Home}/>
+            <Route path='/' Component={Home} element={ <Navigate to='/' /> }/>
             <Route path='/demo' Component={Demo}/>
             <Route path='/redirect' element={ <Navigate to='/not-found' /> } />
           </Routes>
         </main>
       </Router>
+      <Footer />
     </div>
   );
 }
