@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, Navigate } from "react-router-dom";
 import './App.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import Demo from './components/pages/Demo';
@@ -36,15 +38,15 @@ function App() {
     <div className={`App`}>
       <Router>
         <Header darkModeCallback={toggleDarkMode}>
-          <Link to='/'>Home</Link>
-          <Link to='/demo'>Demo</Link>
+          <Link to='/React-Reusable-App-Template'>Home</Link>
+          <Link to='/React-Reusable-App-Template/demo'>Demo</Link>
           <Link to='#'>Services</Link>
           <Link to='#'>Contact</Link>
         </Header>
         <main>
           <Routes>
-            <Route path='/' Component={Home} element={ <Navigate to='/' /> }/>
-            <Route path='/demo' Component={Demo}/>
+            <Route path='/React-Reusable-App-Template' Component={Home} element={ <Navigate to='/React-Reusable-App-Template' /> }/>
+            <Route path='/React-Reusable-App-Template/demo' Component={Demo}/>
             <Route path='/redirect' element={ <Navigate to='/not-found' /> } />
           </Routes>
         </main>

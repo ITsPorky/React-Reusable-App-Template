@@ -5,6 +5,12 @@ import Column from "../common/Column";
 import FullSection from "../common/FullSection";
 import Image from "../common/Image";
 import Logo from '../../logo.svg';
+import Slider from "react-slick";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronRight,
+  faChevronLeft
+} from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   return (
@@ -116,6 +122,41 @@ const Home = () => {
               publishing software like Aldus PageMaker including versions of
               Lorem Ipsum.
             </p>
+          </Column>
+        </Row>
+      </Section>
+      <Section id='Testimonials'>
+        <Row>
+          <Column className="text-center">
+            <Slider 
+              arrows={true}
+              nextArrow={<FontAwesomeIcon icon={faChevronRight}/>} 
+              prevArrow={<FontAwesomeIcon icon={faChevronLeft} />}
+              autoplay={true}
+              autoplaySpeed={5000}
+              dots={true}
+            >
+              <div className="md:max-w-screen-md">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa minima molestiae veritatis? Facere praesentium adipisci fugit ducimus corrupti ut accusantium.</p>
+                <h4>John Doe</h4>
+                <b>CEO</b>
+              </div>
+              <div className="md:max-w-screen-md">
+                <h4>John Doe</h4>
+                <b>CEO</b>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa minima molestiae veritatis? Facere praesentium adipisci fugit ducimus corrupti ut accusantium.</p>
+              </div>
+              <div className="md:max-w-screen-md">
+                <h4>John Doe</h4>
+                <b>CEO</b>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa minima molestiae veritatis? Facere praesentium adipisci fugit ducimus corrupti ut accusantium.</p>
+              </div>
+              <div className="md:max-w-screen-md">
+                <h4>John Doe</h4>
+                <b>CEO</b>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa minima molestiae veritatis? Facere praesentium adipisci fugit ducimus corrupti ut accusantium.</p>
+              </div>
+            </Slider>
           </Column>
         </Row>
       </Section>

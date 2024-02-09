@@ -2,6 +2,7 @@ import React, { Children, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark, faCircleHalfStroke } from "@fortawesome/free-solid-svg-icons";
 import Logo from '../../logo.svg';
+import Tooltip from "./Tootltip";
 // import Menu from "./Menu";
 
 const Header = ({ children, darkModeCallback }) => {
@@ -35,7 +36,11 @@ const Header = ({ children, darkModeCallback }) => {
         <div className="flex flex-row justify-end md:w-1/3">
           <div className="nav-darkmode-toggle-container block px-2">
             <div className="nav-darkmode-toggle p-2 cursor-pointer" onClick={darkModeCallback}>
-              <FontAwesomeIcon icon={faCircleHalfStroke} fontSize={20}/>
+              <Tooltip 
+                element={<FontAwesomeIcon icon={faCircleHalfStroke} fontSize={20}/>}
+                tooltipText='Light/Dark Mode'
+                position="left"
+              />
             </div>
           </div>
           <div className="nav-menu-toggle-container block md:hidden px-2">

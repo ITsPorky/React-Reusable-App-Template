@@ -152,3 +152,122 @@ a:hover {
 }
 
 /* END NavDrawerMenu Styles END */
+
+/* START Tooltips START */
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  width: 120px;
+  visibility: hidden;
+  background: var(--dark-bg);
+  color: var(--light-text);
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.dark .tooltip .tooltiptext {
+  background: var(--light-bg);
+  color: var(--dark-text);
+}
+
+.tooltip .tooltiptext.top {
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+}
+
+.tooltip .tooltiptext.bottom {
+  top: 100%;
+  left: 50%;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+}
+
+.tooltip .tooltiptext.right {
+  top: -5px;
+  left: 130%;
+}
+
+.tooltip .tooltiptext.left {
+  top: -5px;
+  right: 130%;
+}
+
+/* Tooltip arrows */
+.tooltip .tooltiptext.top::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent var(--dark-bg) transparent;
+}
+
+.dark .tooltip .tooltiptext.top::after {
+  border-color: transparent transparent var(--light-bg) transparent;
+}
+
+.tooltip .tooltiptext.bottom::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--dark-bg) transparent transparent transparent;
+}
+
+.dark .tooltip .tooltiptext.bottom::after {
+  border-color: var(--light-bg) transparent transparent transparent;
+}
+
+.tooltip .tooltiptext.right::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent var(--dark-bg) transparent transparent;
+}
+
+.dark .tooltip .tooltiptext.right::after {
+  border-color: transparent var(--light-bg) transparent transparent;
+}
+
+.tooltip .tooltiptext.left::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%; /* To the right of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--dark-bg);
+}
+
+.dark .tooltip .tooltiptext.left::after {
+  border-color: transparent transparent transparent var(--light-bg);
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* START Tooltips START */
