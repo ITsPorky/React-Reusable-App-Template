@@ -23,6 +23,7 @@ body {
   color: var(--dark-text) !important;
   font-family: var(--font-secondary), monospace;
   font-size: var(--font-size);
+  overflow-x: hidden;
 }
 
 header {
