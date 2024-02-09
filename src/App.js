@@ -1,53 +1,60 @@
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link, Navigate } from "react-router-dom";
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link,
+  Navigate,
+} from "react-router-dom";
+import "./App.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Header from './components/common/Header';
-import Footer from './components/common/Footer';
-import Demo from './components/pages/Demo';
-import Home from './components/pages/Home';
-
+import Header from "./components/common/Header";
+import Footer from "./components/common/Footer";
+import Demo from "./components/pages/Demo";
+import Home from "./components/pages/Home";
+import NavMenu from "./components/common/Menu/NavMenu";
+import NavItem from "./components/common/Menu/NavItem";
+import DropdownMenu from "./components/common/Menu/DropdownMenu";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(
-    JSON.parse(localStorage.getItem('dark-mode')) || false
-  );
-
-  // Run on Component load
-  useEffect(() => {
-    applyDarkMode(darkMode);
-  })
-
-  const toggleDarkMode = () => {
-    localStorage.setItem('dark-mode', JSON.stringify(!darkMode));
-    setDarkMode(!darkMode);
-    applyDarkMode(darkMode);
-  };
-
-  const applyDarkMode = (bool) => {
-    // Set Body element colours
-    if(!bool) {
-      document.body.classList.add('dark');
-    } else {
-      document.body.classList.remove('dark');
-    }
-  };
-
   return (
     <div className={`App`}>
       <Router>
-        <Header darkModeCallback={toggleDarkMode}>
-          <Link to='/React-Reusable-App-Template'>Home</Link>
-          <Link to='/React-Reusable-App-Template/demo'>Demo</Link>
-          <Link to='#'>Services</Link>
-          <Link to='#'>Contact</Link>
+        <Header>
+          {/* Nav menu */}
+          <NavMenu>
+            <NavItem link={"/React-Reusable-App-Template"} name={"Home"} />
+            <NavItem link={"/React-Reusable-App-Template/demo"} name={"Demo"} />
+            <NavItem
+              link={"#"}
+              name={"Dropdown"}
+              iconRight={<FontAwesomeIcon icon={faChevronDown} />}
+            >
+              <DropdownMenu>
+                <NavItem link={"/React-Reusable-App-Template"} name={"Home"} />
+                <NavItem
+                  link={"/React-Reusable-App-Template/demo"}
+                  name={"Demo"}
+                />
+                <NavItem link={"#"} name={"Contact"} />
+              </DropdownMenu>
+            </NavItem>
+            <NavItem link={"#"} name={"Contact"} />
+          </NavMenu>
+          {/* END NavMenu END */}
         </Header>
         <main>
           <Routes>
-            <Route path='/React-Reusable-App-Template' Component={Home} element={ <Navigate to='/React-Reusable-App-Template' /> }/>
-            <Route path='/React-Reusable-App-Template/demo' Component={Demo}/>
-            <Route path='/redirect' element={ <Navigate to='/not-found' /> } />
+            <Route
+              path="/React-Reusable-App-Template"
+              Component={Home}
+              element={<Navigate to="/React-Reusable-App-Template" />}
+            />
+            <Route path="/React-Reusable-App-Template/demo" Component={Demo} />
+            <Route path="/redirect" element={<Navigate to="/not-found" />} />
           </Routes>
         </main>
       </Router>

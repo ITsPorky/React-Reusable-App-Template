@@ -8,25 +8,31 @@
   --font-secondary: "Rubik", sans-serif;
   --font-icons: "Font Awesome 6 Free";
   --dark-bg: #161b22;
-  --dark-text: #0B1215;
+  --dark-text: #0b1215;
   --light-bg: #f0f8ff;
-  --light-text: #f0f8ff; 
+  --light-text: #f0f8ff;
   --accent: #4ab3fd;
   --header-height: 70px;
   --border-radius: 5px;
+  --box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--light-bg) !important;
+  color: var(--dark-text) !important;
+  font-family: var(--font-secondary), monospace;
+  font-size: var(--font-size);
+  overflow-x: hidden;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -34,16 +40,10 @@ html {
   scroll-behavior: smooth;
 }
 
-body, header, footer {
-  transition: .3s ease-in-out;
-}
-
-body {
-  background: var(--light-bg) !important;
-  color: var(--dark-text) !important;
-  font-family: var(--font-secondary), monospace;
-  font-size: var(--font-size);
-  overflow-x: hidden;
+body,
+header,
+footer {
+  transition: 0.3s ease-in-out;
 }
 
 header {
@@ -69,7 +69,8 @@ footer {
 
 .dark header,
 .dark footer,
-.dark .mobile-drawer {
+.dark .drawer,
+.dark .dropdown-container {
   background: var(--dark-bg) !important;
   color: var(--light-text) !important;
 }
@@ -90,7 +91,12 @@ main {
   padding-top: 70px;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-primary), monospace;
 }
 
@@ -103,7 +109,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.50rem;
+  font-size: 1.5rem;
 }
 
 h4 {
@@ -133,29 +139,42 @@ a:hover {
   z-index: 999;
 }
 
-.nav-menu-toggle-container .mobile {
+.nav-menu-items {
+  justify-content: center;
+}
+
+.nav-menu-items li {
+  position: relative;
+}
+
+.drawer .nav-menu-toggle-container {
   height: 60px;
   display: flex;
   align-items: center;
   padding: 0 1.5rem;
 }
 
-.nav-menu-items.mobile {
+.drawer .nav-menu-items {
   font-size: 1.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: start;
   padding: 0 1em;
   height: 100%;
 }
 
-.nav-menu-items.mobile a {
+.drawer .nav-menu-items a {
   display: block;
   width: 100%;
   padding: 0.5rem 0;
 }
 
-.mobile-drawer {
+.nav-menu-item {
+  display: block;
+  padding: 0.5rem 1.25rem;
+}
+
+.drawer {
   position: fixed;
   top: 0;
   right: 0;
@@ -164,26 +183,52 @@ a:hover {
   color: var(--dark-text) !important;
   width: 80%;
   transform: translateX(100%);
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
   z-index: 999;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
 
-.mobile-drawer.open {
+.drawer.open {
   transform: translateX(0%) !important;
 }
 
-/* END NavDrawerMenu Styles END */
+/* Dropdown */
 
-/* START Tooltips START */
+.dropdown-container {
+  position: absolute;
+  color: var(--dark-text);
+  background: var(--light-bg);
+  width: 100%;
+  transform: translate(0%, 0%);
+  box-shadow: var(--box-shadow);
+}
 
-/* Tooltip container */
+.drawer .dropdown-container {
+  position: relative;
+  padding-left: 15px;
+  border-left: 1px solid var(--dark-text);
+  box-shadow: unset;
+}
+
+.dark .drawer .dropdown-container {
+  position: relative;
+  padding-left: 15px;
+  border-left: 1px solid var(--light-text);
+  box-shadow: unset;
+}
+
+.dropdown-container .nav-menu-item {
+  padding: 0.5rem;
+}
+
+/* Tooltips */
+
 .tooltip {
   position: relative;
   display: inline-block;
 }
 
-/* Tooltip text */
 .tooltip .tooltiptext {
   width: 120px;
   visibility: hidden;
@@ -225,11 +270,10 @@ a:hover {
   right: 105%;
 }
 
-/* Tooltip arrows */
 .tooltip .tooltiptext.top::after {
   content: " ";
   position: absolute;
-  bottom: 100%;  /* At the top of the tooltip */
+  bottom: 100%; /* At the top of the tooltip */
   left: 50%;
   margin-left: -5px;
   border-width: 5px;
@@ -291,5 +335,3 @@ a:hover {
   visibility: visible;
   opacity: 1;
 }
-
-/* START Tooltips START */

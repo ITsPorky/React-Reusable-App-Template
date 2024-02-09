@@ -4,12 +4,12 @@ import Row from "../common/Row";
 import Column from "../common/Column";
 import FullSection from "../common/FullSection";
 import Image from "../common/Image";
-import Logo from '../../logo.svg';
+import Logo from "../../logo.svg";
 import Slider from "react-slick";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronRight,
-  faChevronLeft
+  faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
@@ -18,7 +18,12 @@ const Home = () => {
       <FullSection id="Section1">
         <Row direction="row">
           <Column className="text-center">
-            <Image src={Logo} alt='React Logo' className='m-auto' Style='max-width: 150px;' />
+            <Image
+              src={Logo}
+              alt="React Logo"
+              className="m-auto"
+              Style="max-width: 150px;"
+            />
             <h1>Page Title</h1>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -125,36 +130,52 @@ const Home = () => {
           </Column>
         </Row>
       </Section>
-      <Section id='Testimonials'>
+      <Section id="Testimonials">
         <Row>
           <Column className="text-center">
-            <Slider 
+            <Slider
               arrows={true}
-              nextArrow={<FontAwesomeIcon icon={faChevronRight}/>} 
+              nextArrow={<FontAwesomeIcon icon={faChevronRight} />}
               prevArrow={<FontAwesomeIcon icon={faChevronLeft} />}
               autoplay={true}
               autoplaySpeed={5000}
               dots={true}
             >
               <div className="md:max-w-screen-md">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa minima molestiae veritatis? Facere praesentium adipisci fugit ducimus corrupti ut accusantium.</p>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Culpa minima molestiae veritatis? Facere praesentium adipisci
+                  fugit ducimus corrupti ut accusantium.
+                </p>
                 <h4>John Doe</h4>
                 <b>CEO</b>
               </div>
               <div className="md:max-w-screen-md">
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Culpa minima molestiae veritatis? Facere praesentium adipisci
+                  fugit ducimus corrupti ut accusantium.
+                </p>
                 <h4>John Doe</h4>
                 <b>CEO</b>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa minima molestiae veritatis? Facere praesentium adipisci fugit ducimus corrupti ut accusantium.</p>
               </div>
               <div className="md:max-w-screen-md">
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Culpa minima molestiae veritatis? Facere praesentium adipisci
+                  fugit ducimus corrupti ut accusantium.
+                </p>
                 <h4>John Doe</h4>
                 <b>CEO</b>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa minima molestiae veritatis? Facere praesentium adipisci fugit ducimus corrupti ut accusantium.</p>
               </div>
               <div className="md:max-w-screen-md">
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Culpa minima molestiae veritatis? Facere praesentium adipisci
+                  fugit ducimus corrupti ut accusantium.
+                </p>
                 <h4>John Doe</h4>
                 <b>CEO</b>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa minima molestiae veritatis? Facere praesentium adipisci fugit ducimus corrupti ut accusantium.</p>
               </div>
             </Slider>
           </Column>
