@@ -12,7 +12,7 @@ import Drawer from "./Drawer";
 import DarkMode from "./DarkMode";
 // import Menu from "./Menu";
 
-const Header = ({ children, darkModeCallback }) => {
+const Header = ({ children }) => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
 
   const toggleDrawer = () => {
