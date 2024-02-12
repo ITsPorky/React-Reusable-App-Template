@@ -1,6 +1,6 @@
 import React, { useState, Children } from "react";
 
-const Drawer = ({ children, openIcon, closeIcon, text }) => {
+const Drawer = ({ children, openIcon, closeIcon, openText, closeText }) => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
 
   const toggleDrawer = () => {
@@ -20,13 +20,13 @@ const Drawer = ({ children, openIcon, closeIcon, text }) => {
           className="nav-menu-toggle p-2 cursor-pointer"
           onClick={toggleDrawer}
         >
-          {openIcon}
+          {openIcon} {openText}
         </div>
       </div>
       <div className={`drawer ${isDrawerOpen ? "open" : ""} md:hidden`}>
         <div className="nav-menu-toggle-container py-1.5">
           <div className="nav-menu-toggle" onClick={toggleDrawer}>
-            {closeIcon} {text}
+            {closeIcon} {closeText}
           </div>
         </div>
         {/* Child Content */}

@@ -65,34 +65,8 @@ footer {
   background: var(--light-bg);
 }
 
-/* Dark Mode */
-.dark {
-  background: var(--dark-bg) !important;
-  color: var(--light-text) !important;
-}
-
-.dark header,
-.dark footer,
-.dark .drawer,
-.dark .dropdown-container {
-  background: var(--dark-bg) !important;
-  color: var(--light-text) !important;
-}
-
-/* START demo page styles (Only for testing) REMOVE START */
-
-.test-outline {
-  border: 1px solid var(--dark-text);
-}
-
-.dark .test-outline {
-  border: 1px solid var(--light-bg);
-}
-
-/* END demo page styles (Only for testing) REMOVE END */
-
 main {
-  padding-top: 70px;
+  padding-top: var(--header-height);
 }
 
 h1,
@@ -131,6 +105,32 @@ h6 {
 a:hover {
   opacity: 0.8;
 }
+
+/* Dark Mode */
+.dark {
+  background: var(--dark-bg) !important;
+  color: var(--light-text) !important;
+}
+
+.dark header,
+.dark footer,
+.dark .drawer,
+.dark .dropdown-container {
+  background: var(--dark-bg) !important;
+  color: var(--light-text) !important;
+}
+
+/* START demo page styles (Only for testing) REMOVE START */
+
+.test-outline {
+  border: 1px solid var(--dark-text);
+}
+
+.dark .test-outline {
+  border: 1px solid var(--light-bg);
+}
+
+/* END demo page styles (Only for testing) REMOVE END */
 
 /* NavDrawerMenu Styles */
 

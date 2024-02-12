@@ -1,70 +1,317 @@
-# Getting Started with Create React App
+# React App Template
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple React.js app template that can be used to quickly setup a working app with responsive design and useful functionality.
 
-## Available Scripts
+## Contents
 
-In the project directory, you can run:
+- [Setup](#setup)
 
-### `npm start`
+### Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To use this template simply clone the repository and install all dependencies using:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm install
+```
 
-### `npm test`
+or
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm i
+```
 
-### `npm run build`
+Then you can run the app by using the following command:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+    npm run start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Components
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Layout Components
 
-### `npm run eject`
+This template contains the following components:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [Header](#header)
+- [Footer](#footer)
+- [FullSection](#fullsection)
+- [Section](#section)
+- [Row](#row)
+- [Column](#column)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##### Header
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This component is a template for the header of your site. The header takes in a NavMenu as a child.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Example:
 
-## Learn More
+```JavaScript
+    <Header>
+        <NavMenu></NavMenu>
+    </Header>
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Footer
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This component is a template for the footer of your site. The footer takes no children.
 
-### Code Splitting
+Example:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```JavaScript
+    <Footer />
+```
 
-### Analyzing the Bundle Size
+##### FullSection
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The FullSection component is a container component that is used to wrap children components. The FullSection will span the full width of the site.
 
-### Making a Progressive Web App
+**props:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
+- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
+- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
 
-### Advanced Configuration
+Example:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```JavaScript
+    <FullSection>
+        <Row>
+            <Column></Column>
+        </Row>
+    </FullSection>
+```
 
-### Deployment
+##### Section
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The Section component is a container component that is used to wrap children components. The Section will span the fullwidth of the page but wil then be restircted to contain the contents in the center of the screen.
 
-### `npm run build` fails to minify
+**props:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
+- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
+- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
+
+Example:
+
+```JavaScript
+    <Section>
+        <Row>
+            <Column></Column>
+        </Row>
+    </Section>
+```
+
+##### Row
+
+The Row component holds Column components into a flex-row that will responsivly wrap the columns.
+
+**props:**
+
+- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
+- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
+- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
+
+Example:
+
+```JavaScript
+    <Row>
+        <Column></Column>
+        <Column></Column>
+    </Row>
+```
+
+##### Column
+
+The Column component holds content in a column within a Row component. Columns added to a Row component will sit next to eachother within the row until wrapping responsivly.
+
+**props:**
+
+- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
+- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
+- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
+
+Example:
+
+```JavaScript
+    <Row>
+        <Column>
+            <h2>Column 1</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, autem?</p>
+        </Column>
+        <Column>
+            <h2>Column 2</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, autem?</p>
+        </Column>
+    </Row>
+```
+
+#### Utility Components
+
+- [NavMenu](#navmenu)
+- [NavItem](#navitem)
+- [DropdownMenu](#dropdownmenu)
+- [Drawer](#drawer)
+- [DarkMode](#darkmode)
+- [Tooltip](#tooltip)
+- [Image]()
+
+##### NavMenu
+
+The NavMenu component is responsible for holding NavItem components and will use them to create Navigation links for the site.
+
+**props:**
+
+- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
+- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
+- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
+
+Example:
+
+```JavaScript
+    <NavMenu>
+        <NavItem link={"/"} name={"Home"} />
+        <NavItem link={"/Demo"} name={"Demo"} />
+        <NavItem link={"/Contact"} name={"Contact"} />
+    </NavMenu>
+```
+
+##### NavItem
+
+The NavItem component is responsible for creating Navigation links for the site.
+
+**props:**
+
+- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
+- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
+- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
+- `link` = This prop takes in the link for the Navitem.
+- `name` = This prop takes in the name or text that will be assigned to the button.
+
+Example:
+
+```JavaScript
+    <NavMenu>
+        <NavItem link={"/"} name={"Home"} />
+        <NavItem link={"/Demo"} name={"Demo"} />
+        <NavItem link={"/Contact"} name={"Contact"} />
+    </NavMenu>
+```
+
+##### DropdownMenu
+
+The DropdownMenu component is used to create dropdown menus on navlinks that contain extra options. The Dropdown menu component should be used within a NavItem Component or any component you wish to add a dropdown menu too.
+
+**props:**
+
+- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
+- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
+- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
+
+Example:
+
+```JavaScript
+    <NavMenu>
+        <NavItem
+            link={"#"}
+            name={"Dropdown"}
+            iconRight={<FontAwesomeIcon icon={faChevronDown} />}
+        >
+            <DropdownMenu>
+            <NavItem link={"/"} name={"Home"} />
+            <NavItem link={"/Demo"} name={"Demo"} />
+            <NavItem link={"/Contact"} name={"Contact"} />
+            </DropdownMenu>
+        </NavItem>
+    </NavMenu>
+```
+
+##### Drawer
+
+The Drawer component is used to create Drawer menus that will slide in from the side and contain the desired content.
+
+**props:**
+
+- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
+- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
+- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
+- `openText` = This prop takes text in to be used for the open drawer toggle container.
+- `closeText` = This prop takes text in to be used for the close drawer toggle container.
+
+Example:
+
+```JavaScript
+    <Drawer
+        openIcon={<FontAwesomeIcon icon={faBars} fontSize={20} />}
+        closeIcon={<FontAwesomeIcon icon={faXmark} fontSize={20} />}
+        openText={'Open'}
+        closeText={'Close'}
+    >
+        <NavMenu>
+            <NavItem link={"/"} name={"Home"} />
+            <NavItem link={"/Demo"} name={"Demo"} />
+            <NavItem link={"/Contact"} name={"Contact"} />
+        </NavMenu>
+    </Drawer>
+```
+
+##### DarkMode
+
+The DarkMode component is a toggle component that will toggle a light/dark mode version of the site.
+
+**props**
+
+- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
+- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
+- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
+- `icon` = This prop takes an icon that will be used for the toggle button.
+- `text` = This prop takes text that will be used for the toggle button.
+
+Example:
+
+```JavaScript
+    <DarkMode icon={<FontAwesomeIcon icon={faCircleHalfStroke} fontSize={20} />} text={'Toggle Dark Mode'} />
+```
+
+##### Tooltip
+
+The Tooltip component will add a tooltip to appear when the item is hovered.
+
+**props**
+
+- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
+- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
+- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
+- `element` = This prop takes the component that you wish the tooltip to appear over.
+- `toottipText` = This is the text that will be shown in the tooltip.
+- `position` = This determines the position the tooltip will appear.
+
+Example:
+
+```JavaScript
+    <Tooltip
+        element={<p>Hover me</p>}
+        tooltipText="Tooltip text..."
+        position="left"
+    />
+```
+
+##### Image
+
+The Image component is used to add an image to the site that will match the sites theme.
+
+**props**
+
+- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
+- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
+- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
+- `src` = This prop takes the src value which will point to the image you want to display.
+- `alt` = This prop takes the alt text that you would like to appear when your image is hovered.
+
+Example:
+
+```JavaScript
+    <Image
+        src="/image.png"
+        alt="Image alt text..."
+    />
+```
