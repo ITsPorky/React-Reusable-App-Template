@@ -115,7 +115,7 @@ a:hover {
 .btn {
   background: var(--dark-bg);
   color: var(--light-text);
-  display: block;
+  display: inline-block;
   padding: 0.5rem 1.25rem;
 }
 
