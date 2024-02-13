@@ -1,5 +1,4 @@
 import React, { Children, useState } from "react";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
@@ -13,18 +12,6 @@ import DarkMode from "./DarkMode";
 // import Menu from "./Menu";
 
 const Header = ({ children }) => {
-  const [isDrawerOpen, setDrawerOpen] = useState(false);
-
-  const toggleDrawer = () => {
-    setDrawerOpen(!isDrawerOpen);
-    // Lock Scrolling when draw is open
-    if (!isDrawerOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-  };
-
   return (
     <header className="flex py-1.5">
       {/* Nav Menu */}

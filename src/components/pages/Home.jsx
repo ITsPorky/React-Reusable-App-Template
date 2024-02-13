@@ -11,11 +11,15 @@ import {
   faChevronRight,
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
+import Code from "../common/Code";
+import Toast from "../common/Toast";
+import Notification from "../common/Notification";
+import Button from "../common/Button";
 
 const Home = () => {
   return (
     <>
-      <FullSection id="Section1">
+      <FullSection id="Section1" backgroundImage={Logo}>
         <Row direction="row">
           <Column className="text-center">
             <Image
@@ -44,6 +48,30 @@ const Home = () => {
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type specimen book.
             </p>
+            <Code>npm install</Code>
+            <Toast text={"Notifictaion message..."} timer={4000} />
+          </Column>
+        </Row>
+      </Section>
+      <Section>
+        <Row direction="row">
+          <Column className="text-center">
+            <h3>Notification</h3>
+            <Notification
+              title={"Notification"}
+              text={"This is an example of the Notification component..."}
+            >
+              <Button text={"Click here to test!"} />
+            </Notification>
+          </Column>
+          <Column className="text-center">
+            <h3>Toast</h3>
+            <Toast
+              title={"Toast"}
+              text={"This is an example of the Toast component..."}
+            >
+              <Button text={"Click here to test!"} />
+            </Toast>
           </Column>
         </Row>
       </Section>

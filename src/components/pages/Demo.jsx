@@ -3,6 +3,8 @@ import Section from "../common/Section";
 import Row from "../common/Row";
 import Column from "../common/Column";
 import FullSection from "../common/FullSection";
+import Toast from "../common/Toast";
+import Notification from "../common/Notification";
 
 const Demo = () => {
   return (
@@ -11,9 +13,7 @@ const Demo = () => {
         <Row direction="row">
           <Column className="text-center">
             <h1>Component and Style Examples</h1>
-            <p>
-              This Page showcases each component and styles.
-            </p>
+            <p>This Page showcases each component and styles.</p>
           </Column>
         </Row>
       </FullSection>
@@ -26,7 +26,7 @@ const Demo = () => {
             <h4>Heading 4</h4>
             <h5>Heading 5</h5>
             <h6>Heading 6</h6>
-            <br/>
+            <br />
             <p>Paragraph</p>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -37,13 +37,33 @@ const Demo = () => {
           </Column>
         </Row>
       </Section>
+      <Section>
+        <Row direction="row">
+          <Column className="text-center">
+            <h3>Notification</h3>
+            <Notification
+              title={"Notification"}
+              text={"This is an example of the Notification component..."}
+            >
+              <a>Click here to test!</a>
+            </Notification>
+          </Column>
+          <Column className="text-center">
+            <h3>Toast</h3>
+            <Toast
+              title={"Toast"}
+              text={"This is an example of the Toast component..."}
+            >
+              <a>Click here to test!</a>
+            </Toast>
+          </Column>
+        </Row>
+      </Section>
       <FullSection id="FullSection2" className="test-outline">
         <Row direction="row" className="test-outline">
           <Column className="text-center test-outline">
             <h1>Component and Style Examples</h1>
-            <p>
-              This Page showcases each component and styles.
-            </p>
+            <p>This Page showcases each component and styles.</p>
           </Column>
         </Row>
       </FullSection>

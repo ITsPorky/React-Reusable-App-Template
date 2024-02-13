@@ -2,10 +2,10 @@ import React, { Children, useState } from "react";
 import { Link } from "react-router-dom";
 
 const NavItem = ({ children, iconLeft, iconRight, name, link }) => {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState(false);
 
   const toggleOpen = () => {
-    setOpen(!open);
+    setOpen(!isOpen);
   };
 
   return (
@@ -13,15 +13,15 @@ const NavItem = ({ children, iconLeft, iconRight, name, link }) => {
       <Link
         to={link}
         className="nav-menu-item"
-        // onMouseEnter={toggleOpen}
-        // onMouseLeave={toggleOpen}
+        onMouseEnter={toggleOpen}
+        onMouseLeave={toggleOpen}
         onClick={toggleOpen}
       >
         <span className="icon-left">{iconLeft}</span>
         {name}
         <span className="icon-right">{iconRight}</span>
       </Link>
-      {open &&
+      {isOpen &&
         Children.map(children, (child) => {
           return <>{child}</>;
         })}

@@ -8,8 +8,10 @@
   --font-secondary: "Rubik", sans-serif;
   --font-icons: "Font Awesome 6 Free";
   --dark-bg: #161b22;
+  --dark-bg-secondary: #1f2630;
   --dark-text: #0b1215;
   --light-bg: #f0f8ff;
+  --light-bg-secondary: #e1e9ef;
   --light-text: #f0f8ff;
   --accent: #4ab3fd;
   --header-height: 70px;
@@ -18,6 +20,8 @@
   --ease-transition: 0.3s ease-in-out;
   --drawer-transition: 0.2s ease-in-out;
   --tooltip-transition: 0.2s ease-in-out;
+  --success: #4afda3;
+  --error: #fd4a4a;
 }
 
 body {
@@ -46,6 +50,8 @@ html {
 body,
 header,
 footer,
+code,
+pre code,
 .dropdown-container {
   transition: var(--ease-transition);
 }
@@ -104,6 +110,40 @@ h6 {
 
 a:hover {
   opacity: 0.8;
+}
+
+.btn {
+  background: var(--dark-bg);
+  color: var(--light-text);
+  display: block;
+  padding: 0.5rem 1.25rem;
+}
+
+.dark .btn {
+  background: var(--light-bg);
+  color: var(--dark-text);
+}
+
+pre code {
+  display: block;
+  background: var(--light-bg-secondary);
+  border-radius: var(--border-radius);
+  text-align: left;
+  padding: 0.2rem 0.6rem;
+  margin: 1rem 0;
+}
+
+code {
+  background: var(--light-bg-secondary);
+  border-radius: var(--border-radius);
+  text-align: left;
+  padding: 0.2rem 0.6rem;
+}
+
+.dark pre code,
+.dark code {
+  color: var(--light-text);
+  background: var(--dark-bg-secondary);
 }
 
 /* Dark Mode */
@@ -344,4 +384,104 @@ a:hover {
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+/* Toast styles */
+
+.notification {
+  background: var(--light-bg);
+  text-align: left;
+  display: block;
+  position: fixed;
+  right: 0px;
+  top: var(--header-height);
+  transform: translate(105%, 20%);
+  width: 100%;
+  max-width: 200px;
+  padding: 0 0.5rem;
+  border-radius: var(--border-radius);
+  border-bottom: 3px solid var(--accent);
+  box-shadow: var(--box-shadow);
+  transition: var(--ease-transition);
+  z-index: 99;
+}
+
+.notification.open {
+  transform: translate(-5%, 20%);
+}
+
+.dark .notification {
+  background: var(--dark-bg);
+}
+
+.notification-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+}
+
+.notification-body {
+  padding: 0.3rem 0;
+}
+
+/* Toast styles */
+
+.toast {
+  background: var(--light-bg);
+  text-align: left;
+  display: block;
+  position: fixed;
+  right: 50%;
+  bottom: 10px;
+  transform: translate(50%, 200%);
+  width: 100%;
+  max-width: 400px;
+  padding: 0 0.5rem;
+  border-radius: var(--border-radius);
+  border-bottom: 3px solid var(--accent);
+  box-shadow: var(--box-shadow);
+  transition: var(--ease-transition);
+  z-index: 99;
+}
+
+.toast.open {
+  transform: translate(50%, 0%);
+}
+
+.dark .toast {
+  background: var(--dark-bg);
+}
+
+.toast-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+}
+
+.toast-body {
+  padding: 0.3rem 0;
+}
+
+/* Slick Slider */
+
+.dark .slick-next,
+.dark .slick-prev {
+  color: var(--light-text) !important;
+}
+
+.slick-next,
+.slick-prev {
+  color: var(--dark-text) !important;
+}
+
+.slick-next {
+  right: 0px !important;
+}
+
+.slick-prev {
+  left: 0px !important;
 }

@@ -31,7 +31,10 @@ const Drawer = ({ children, openIcon, closeIcon, openText, closeText }) => {
         </div>
         {/* Child Content */}
         {Children.map(children, (child) => {
-          return <>{child}</>;
+          const element = React.cloneElement(child, {
+            onClick: toggleDrawer,
+          });
+          return <>{element}</>;
         })}
       </div>
     </>
