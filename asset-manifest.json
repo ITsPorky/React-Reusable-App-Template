@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/React-Reusable-App-Template/static/css/main.ce578b13.css",
-    "main.js": "/React-Reusable-App-Template/static/js/main.3930ed88.js",
+    "main.js": "/React-Reusable-App-Template/static/js/main.3c1478e2.js",
     "static/js/592.d519b653.chunk.js": "/React-Reusable-App-Template/static/js/592.d519b653.chunk.js",
     "static/media/logo.svg": "/React-Reusable-App-Template/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "static/media/slick.svg": "/React-Reusable-App-Template/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -10,11 +10,11 @@
     "static/media/slick.woff": "/React-Reusable-App-Template/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/React-Reusable-App-Template/index.html",
     "main.ce578b13.css.map": "/React-Reusable-App-Template/static/css/main.ce578b13.css.map",
-    "main.3930ed88.js.map": "/React-Reusable-App-Template/static/js/main.3930ed88.js.map",
+    "main.3c1478e2.js.map": "/React-Reusable-App-Template/static/js/main.3c1478e2.js.map",
     "592.d519b653.chunk.js.map": "/React-Reusable-App-Template/static/js/592.d519b653.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ce578b13.css",
-    "static/js/main.3930ed88.js"
+    "static/js/main.3c1478e2.js"
   ]
 }
