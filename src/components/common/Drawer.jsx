@@ -1,7 +1,22 @@
-import React, { useState, Children } from "react";
+import React, { useState, useRef, useEffect, Children } from "react";
 
 const Drawer = ({ children, openIcon, closeIcon, openText, closeText }) => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, !isDrawerOpen);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside, !isDrawerOpen);
+    };
+  });
+
+  const handleClickOutside = (event) => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      setDrawerOpen(!isDrawerOpen);
+    }
+  };
 
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
@@ -14,7 +29,7 @@ const Drawer = ({ children, openIcon, closeIcon, openText, closeText }) => {
   };
 
   return (
-    <>
+    <div ref={ref}>
       <div className="nav-menu-toggle-container block md:hidden px-2">
         <div
           className="nav-menu-toggle p-2 cursor-pointer"
@@ -37,7 +52,7 @@ const Drawer = ({ children, openIcon, closeIcon, openText, closeText }) => {
           return <>{element}</>;
         })}
       </div>
-    </>
+    </div>
   );
 };
 

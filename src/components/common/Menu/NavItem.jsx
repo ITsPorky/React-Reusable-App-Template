@@ -1,10 +1,25 @@
-import React, { Children, useState } from "react";
+import React, { Children, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const NavItem = ({ children, iconLeft, iconRight, name, link }) => {
   const [isOpen, setOpen] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, !isOpen);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside, !isOpen);
+    };
+  });
+
+  const handleClickOutside = (event) => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      setOpen(!isOpen);
+    }
+  };
 
   const toggleOpen = () => {
     setOpen(!isOpen);
@@ -26,6 +41,7 @@ const NavItem = ({ children, iconLeft, iconRight, name, link }) => {
         // onMouseEnter={toggleOpen}
         // onMouseLeave={toggleOpen}
         onClick={toggleOpen}
+        ref={ref}
       >
         <span className="icon-left">{iconLeft}</span>
         {name}
