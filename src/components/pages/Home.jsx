@@ -48,7 +48,6 @@ const Home = () => {
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type specimen book.
             </p>
-            <Code>npm install</Code>
             <Toast text={"Notifictaion message..."} timer={4000} />
           </Column>
         </Row>
@@ -57,6 +56,10 @@ const Home = () => {
         <Row direction="row">
           <Column className="text-center">
             <h3>Notification</h3>
+            <p>
+              A notification is a popup that will appear in the top right corner
+              of the screen. Try it out using the button below.
+            </p>
             <Notification
               title={"Notification"}
               text={"This is an example of the Notification component..."}
@@ -66,12 +69,31 @@ const Home = () => {
           </Column>
           <Column className="text-center">
             <h3>Toast</h3>
+            <p>
+              A toast is a popup that will appear from the bottom of the screen
+              like toast popping out of a toaster. Try it out using the button
+              below.
+            </p>
             <Toast
               title={"Toast"}
               text={"This is an example of the Toast component..."}
             >
               <Button text={"Click here to test!"} />
             </Toast>
+          </Column>
+        </Row>
+        <Row direction="row">
+          <Column className="text-center">
+            <h3>Emphasise (em)</h3>
+            <em>This is emphasised text...</em>
+          </Column>
+          <Column>
+            <h3 className="text-center">Blockquote</h3>
+            <blockquote>This is a blockquote example...</blockquote>
+          </Column>
+          <Column>
+            <h3 className="text-center">Code Block</h3>
+            <Code>npm install</Code>
           </Column>
         </Row>
       </Section>

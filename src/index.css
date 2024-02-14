@@ -110,6 +110,25 @@ h6 {
   font-size: 1rem;
 }
 
+p {
+  margin-bottom: 1rem;
+}
+
+em {
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+}
+
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 1rem;
+  background: var(--light-bg-secondary);
+}
+
+.dark blockquote {
+  background: var(--dark-bg-secondary);
+}
+
 a:hover {
   opacity: 0.8;
 }
