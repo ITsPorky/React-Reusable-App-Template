@@ -4,9 +4,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const Notification = ({
   children,
-  id,
   className = "",
-  Style,
   title,
   text,
   timer = 5000,

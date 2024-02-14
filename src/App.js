@@ -15,8 +15,6 @@ import Home from "./components/pages/Home";
 import NavMenu from "./components/common/Menu/NavMenu";
 import NavItem from "./components/common/Menu/NavItem";
 import DropdownMenu from "./components/common/Menu/DropdownMenu";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   return (
@@ -27,11 +25,7 @@ function App() {
           <NavMenu>
             <NavItem link={"/React-Reusable-App-Template"} name={"Home"} />
             <NavItem link={"/React-Reusable-App-Template/demo"} name={"Demo"} />
-            <NavItem
-              link={"#"}
-              name={"Dropdown"}
-              iconRight={<FontAwesomeIcon icon={faChevronDown} />}
-            >
+            <NavItem link={"#"} name={"Dropdown"}>
               <DropdownMenu>
                 <NavItem link={"/React-Reusable-App-Template"} name={"Home"} />
                 <NavItem

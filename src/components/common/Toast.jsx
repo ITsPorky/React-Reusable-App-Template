@@ -2,17 +2,8 @@ import React, { Children, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-const Toast = ({
-  children,
-  id,
-  className = "",
-  Style,
-  title,
-  text,
-  timer = 5000,
-}) => {
+const Toast = ({ children, className = "", title, text, timer = 5000 }) => {
   const [isVisible, setVisible] = useState(false);
-  const [count, setCount] = useState(0);
 
   const handleEnable = () => {
     setVisible(true);
