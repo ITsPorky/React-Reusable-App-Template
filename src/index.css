@@ -17,10 +17,7 @@
   --header-height: 70px;
   --border-radius: 5px;
   --box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  --box-shdow-dark: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.1),
-    0 0 0 1px hsla(230, 13%, 9%, 0.075), 0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
-    0 0.9px 1.5px hsla(230, 13%, 9%, 0.045),
-    0 3.5px 6px hsla(230, 13%, 9%, 0.09);
+  --box-shadow-popup: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   --ease-transition: 0.3s ease-in-out;
   --drawer-transition: 0.2s ease-in-out;
   --tooltip-transition: 0.2s ease-in-out;
@@ -435,7 +432,7 @@ code {
   padding: 0 0.5rem;
   border-radius: var(--border-radius);
   border-bottom: 3px solid var(--accent);
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-popup);
   transition: var(--ease-transition);
   z-index: 99;
 }
@@ -475,7 +472,7 @@ code {
   padding: 0 0.5rem;
   border-radius: var(--border-radius);
   border-bottom: 3px solid var(--accent);
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-popup);
   transition: var(--ease-transition);
   z-index: 99;
 }
