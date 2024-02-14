@@ -5,6 +5,7 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const NavItem = ({ children, iconLeft, iconRight, name, link }) => {
   const [isOpen, setOpen] = useState(false);
+  // Custom Hook to close container when clicking outside
   const ref = useRef(null);
 
   useEffect(() => {
@@ -20,6 +21,7 @@ const NavItem = ({ children, iconLeft, iconRight, name, link }) => {
       setOpen(!isOpen);
     }
   };
+  // END Custom Hook
 
   const toggleOpen = () => {
     setOpen(!isOpen);

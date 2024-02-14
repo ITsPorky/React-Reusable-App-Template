@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect, Children } from "react";
 
 const Drawer = ({ children, openIcon, closeIcon, openText, closeText }) => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
+  // Custom Hook to close container when clicking outside
   const ref = useRef(null);
 
   useEffect(() => {
@@ -14,9 +15,10 @@ const Drawer = ({ children, openIcon, closeIcon, openText, closeText }) => {
 
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
-      setDrawerOpen(!isDrawerOpen);
+      toggleDrawer(!isDrawerOpen);
     }
   };
+  // END Custom Hook
 
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);

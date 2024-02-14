@@ -263,14 +263,15 @@ code {
 .drawer .dropdown-container {
   position: relative;
   padding-left: 15px;
-  border-left: 1px solid var(--dark-text);
+  border-left: 2px solid var(--dark-text);
   box-shadow: unset;
+  border-radius: unset;
 }
 
 .dark .drawer .dropdown-container {
   position: relative;
   padding-left: 15px;
-  border-left: 1px solid var(--light-text);
+  border-left: 2px solid var(--light-text);
   box-shadow: unset;
 }
 
