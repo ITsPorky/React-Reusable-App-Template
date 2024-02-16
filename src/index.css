@@ -316,7 +316,7 @@ progress[value]::-webkit-progress-value {
 .drawer .dropdown-container {
   position: relative;
   padding-left: 15px;
-  border-left: 2px solid var(--dark-text);
+  border-left: 3px solid var(--accent);
   box-shadow: unset;
   border-radius: unset;
 }
