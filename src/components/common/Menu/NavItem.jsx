@@ -50,7 +50,7 @@ const NavItem = ({ children, iconLeft, iconRight, name, link }) => {
         <span className="icon-right">{iconRight}</span>
         {!isChildNull() && (
           <span className="icon-dropdown">
-            <FontAwesomeIcon icon={faChevronDown} fontSize={10} />
+            <FontAwesomeIcon icon={faChevronDown} />
           </span>
         )}
       </Link>

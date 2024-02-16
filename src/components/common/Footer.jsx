@@ -20,7 +20,10 @@ const Footer = () => {
           <Column className="">
             <Image src={Logo} alt="Logo" Style="max-width: 100px;" />
             <b>React Template</b>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, officiis.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Obcaecati, officiis.
+            </p>
           </Column>
           <Column className="!w-1/2 md:!w-full">
             <h6>Quick Links</h6>
@@ -54,30 +57,22 @@ const Footer = () => {
             <h6>Contact</h6>
             <ul>
               <li>
-                <p>
-                  <span Style="margin-right: 10px;">
-                    <FontAwesomeIcon icon={faLocationDot} />
-                  </span>{" "}
-                  <span>123 Example Street, QLD 4000</span>
-                </p>
+                <span Style="margin-right: 10px;">
+                  <FontAwesomeIcon icon={faLocationDot} />
+                </span>{" "}
+                <span>123 Example Street, QLD 4000</span>
               </li>
               <li>
-                <p>
-                  <span Style="margin-right: 10px;">
-                    <FontAwesomeIcon icon={faEnvelope} />
-                  </span>
-                  <a href="mailto:enquiries@example.com">
-                    enquiries@example.com
-                  </a>
-                </p>
+                <span Style="margin-right: 10px;">
+                  <FontAwesomeIcon icon={faEnvelope} />
+                </span>
+                <a href="mailto:enquiries@example.com">enquiries@example.com</a>
               </li>
               <li>
-                <p>
-                  <span Style="margin-right: 10px;">
-                    <FontAwesomeIcon icon={faPhone} />
-                  </span>
-                  <a href="tel:0404040404">0404 040 404</a>
-                </p>
+                <span Style="margin-right: 10px;">
+                  <FontAwesomeIcon icon={faPhone} />
+                </span>
+                <a href="tel:0404040404">0404 040 404</a>
               </li>
             </ul>
           </Column>
