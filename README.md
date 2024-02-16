@@ -1,14 +1,15 @@
 # React App Template
 
-A simple React.js app template that can be used to quickly setup a working app with responsive design and useful functionality.
+The React App Template provides a robust foundation for swiftly setting up responsive and feature-rich React.js applications.
 
 ## Contents
 
 - [Setup](#setup)
+- [Components](#components)
 
 ### Setup
 
-To use this template simply clone the repository and install all dependencies using:
+To utilize this template, clone the repository and install dependencies with the following commands:
 
 ```bash
 npm install
@@ -20,17 +21,17 @@ or
 npm i
 ```
 
-Then you can run the app by using the following command:
+Then launch the application with:
 
 ```bash
-    npm run start
+npm run start
 ```
 
 ### Components
 
 #### Layout Components
 
-This template contains the following components:
+The template includes the following layout components:
 
 - [Header](#header)
 - [Footer](#footer)
@@ -41,108 +42,108 @@ This template contains the following components:
 
 ##### Header
 
-This component is a template for the header of your site. The header takes in a NavMenu as a child.
+The Header component serves as a template for the site's header, accepting a NavMenu as its child.
 
 Example:
 
 ```JavaScript
-    <Header>
-        <NavMenu></NavMenu>
-    </Header>
+<Header>
+    <NavMenu></NavMenu>
+</Header>
 ```
 
 #### Footer
 
-This component is a template for the footer of your site. The footer takes no children.
+The Footer component acts as a template for the site's footer and does not require any children.
 
 Example:
 
 ```JavaScript
-    <Footer />
+<Footer />
 ```
 
 ##### FullSection
 
-The FullSection component is a container component that is used to wrap children components. The FullSection will span the full width of the site.
+The FullSection component is a container that spans the full width of the site, accommodating child components.
 
-**props:**
+**Props:**
 
-- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
-- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
-- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
+- `id`: Assigns an ID to the HTML element.
+- `className`: Adds classes to the HTML element.
+- `Style`: Adds inline styles to the HTML element.
 
 Example:
 
 ```JavaScript
-    <FullSection>
-        <Row>
-            <Column></Column>
-        </Row>
-    </FullSection>
+<FullSection>
+    <Row>
+        <Column></Column>
+    </Row>
+</FullSection>
 ```
 
 ##### Section
 
-The Section component is a container component that is used to wrap children components. The Section will span the fullwidth of the page but wil then be restircted to contain the contents in the center of the screen.
+The Section component is a container that spans the full width of the page but restricts contents to the center.
 
-**props:**
+**Props:**
 
-- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
-- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
-- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
+- `id`: Assigns an ID to the HTML element.
+- `className`: Adds classes to the HTML element.
+- `Style`: Adds inline styles to the HTML element.
 
 Example:
 
 ```JavaScript
-    <Section>
-        <Row>
-            <Column></Column>
-        </Row>
-    </Section>
+<Section>
+    <Row>
+        <Column></Column>
+    </Row>
+</Section>
 ```
 
 ##### Row
 
-The Row component holds Column components into a flex-row that will responsivly wrap the columns.
+The Row component holds Column components in a flex-row, responsively wrapping the columns.
 
-**props:**
+**Props:**
 
-- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
-- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
-- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
+- `id`: Assigns an ID to the HTML element.
+- `className`: Adds classes to the HTML element.
+- `Style`: Adds inline styles to the HTML element.
 
 Example:
 
 ```JavaScript
-    <Row>
-        <Column></Column>
-        <Column></Column>
-    </Row>
+<Row>
+    <Column></Column>
+    <Column></Column>
+</Row>
 ```
 
 ##### Column
 
-The Column component holds content in a column within a Row component. Columns added to a Row component will sit next to eachother within the row until wrapping responsivly.
+The Column component holds content in a column within a Row component, allowing responsive wrapping.
 
-**props:**
+**Props:**
 
-- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
-- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
-- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
+- `id`: Assigns an ID to the HTML element.
+- `className`: Adds classes to the HTML element.
+- `Style`: Adds inline styles to the HTML element.
 
 Example:
 
 ```JavaScript
-    <Row>
-        <Column>
-            <h2>Column 1</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, autem?</p>
-        </Column>
-        <Column>
-            <h2>Column 2</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, autem?</p>
-        </Column>
-    </Row>
+<Row>
+    <Column>
+        <h2>Column 1</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, autem?</p>
+    </Column>
+    <Column>
+        <h2>Column 2</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, autem?</p>
+    </Column>
+</Row>
 ```
 
 #### Utility Components
@@ -152,166 +153,236 @@ Example:
 - [DropdownMenu](#dropdownmenu)
 - [Drawer](#drawer)
 - [DarkMode](#darkmode)
+- [Button](#button)
 - [Tooltip](#tooltip)
-- [Image]()
+- [Toast](#toast)
+- [Notification](#notification)
+- [Image](#image)
 
 ##### NavMenu
 
-The NavMenu component is responsible for holding NavItem components and will use them to create Navigation links for the site.
+The NavMenu component manages NavItem components to create navigation links for the site.
 
-**props:**
+**Props:**
 
-- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
-- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
-- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
+- `id`: Assigns an ID to the HTML element.
+- `className`: Adds classes to the HTML element.
+- `Style`: Adds inline styles to the HTML element.
 
 Example:
 
 ```JavaScript
-    <NavMenu>
-        <NavItem link={"/"} name={"Home"} />
-        <NavItem link={"/Demo"} name={"Demo"} />
-        <NavItem link={"/Contact"} name={"Contact"} />
-    </NavMenu>
+<NavMenu>
+    <NavItem link={"/"} name={"Home"} />
+    <NavItem link={"/Demo"} name={"Demo"} />
+    <NavItem link={"/Contact"} name={"Contact"} />
+</NavMenu>
 ```
 
 ##### NavItem
 
-The NavItem component is responsible for creating Navigation links for the site.
+The NavItem component creates navigation links for the site.
 
-**props:**
+**Props:**
 
-- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
-- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
-- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
-- `link` = This prop takes in the link for the Navitem.
-- `name` = This prop takes in the name or text that will be assigned to the button.
+- `id`: Assigns an ID to the HTML element.
+- `className`: Adds classes to the HTML element.
+- `Style`: Adds inline styles to the HTML element.
+- `link`: URL for the NavItem.
+- `name`: Text displayed for the link.
 
 Example:
 
 ```JavaScript
+<NavMenu>
+    <NavItem link={"/"} name={"Home"} />
+    <NavItem link={"/Demo"} name={"Demo"} />
+    <NavItem link={"/Contact"} name={"Contact"} />
+</NavMenu>
+```
+
+##### DropdownMenu
+
+The DropdownMenu component creates dropdown menus for navlinks with additional options.
+
+**Props:**
+
+- `id`: Assigns an ID to the HTML element.
+- `className`: Adds classes to the HTML element.
+- `Style`: Adds inline styles to the HTML element.
+
+Example:
+
+```JavaScript
+<NavMenu>
+    <NavItem
+        link={"#"}
+        name={"Dropdown"}
+        iconRight={<FontAwesomeIcon icon={faChevronDown} />}
+    >
+        <DropdownMenu>
+            <NavItem link={"/"} name={"Home"} />
+            <NavItem link={"/Demo"} name={"Demo"} />
+            <NavItem link={"/Contact"} name={"Contact"} />
+        </DropdownMenu>
+    </NavItem>
+</NavMenu>
+```
+
+##### Drawer
+
+The Drawer component creates slide-in menus from the side containing desired content.
+
+**Props:**
+
+- `id`: Assigns an ID to the HTML element.
+- `className`: Adds classes to the HTML element.
+- `Style`: Adds inline styles to the HTML element.
+- `openText`: Text for the open drawer toggle.
+- `closeText`: Text for the close drawer toggle.
+
+Example:
+
+```JavaScript
+<Drawer
+    openIcon={<FontAwesomeIcon icon={faBars} fontSize={20} />}
+    closeIcon={<FontAwesomeIcon icon={faXmark} fontSize={20} />}
+    openText={'Open'}
+    closeText={'Close'}
+>
     <NavMenu>
         <NavItem link={"/"} name={"Home"} />
         <NavItem link={"/Demo"} name={"Demo"} />
         <NavItem link={"/Contact"} name={"Contact"} />
     </NavMenu>
-```
-
-##### DropdownMenu
-
-The DropdownMenu component is used to create dropdown menus on navlinks that contain extra options. The Dropdown menu component should be used within a NavItem Component or any component you wish to add a dropdown menu too.
-
-**props:**
-
-- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
-- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
-- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
-
-Example:
-
-```JavaScript
-    <NavMenu>
-        <NavItem
-            link={"#"}
-            name={"Dropdown"}
-            iconRight={<FontAwesomeIcon icon={faChevronDown} />}
-        >
-            <DropdownMenu>
-            <NavItem link={"/"} name={"Home"} />
-            <NavItem link={"/Demo"} name={"Demo"} />
-            <NavItem link={"/Contact"} name={"Contact"} />
-            </DropdownMenu>
-        </NavItem>
-    </NavMenu>
-```
-
-##### Drawer
-
-The Drawer component is used to create Drawer menus that will slide in from the side and contain the desired content.
-
-**props:**
-
-- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
-- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
-- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
-- `openText` = This prop takes text in to be used for the open drawer toggle container.
-- `closeText` = This prop takes text in to be used for the close drawer toggle container.
-
-Example:
-
-```JavaScript
-    <Drawer
-        openIcon={<FontAwesomeIcon icon={faBars} fontSize={20} />}
-        closeIcon={<FontAwesomeIcon icon={faXmark} fontSize={20} />}
-        openText={'Open'}
-        closeText={'Close'}
-    >
-        <NavMenu>
-            <NavItem link={"/"} name={"Home"} />
-            <NavItem link={"/Demo"} name={"Demo"} />
-            <NavItem link={"/Contact"} name={"Contact"} />
-        </NavMenu>
-    </Drawer>
+</Drawer>
 ```
 
 ##### DarkMode
 
-The DarkMode component is a toggle component that will toggle a light/dark mode version of the site.
+The DarkMode component toggles between light and dark mode for the site.
 
-**props**
+**Props:**
 
-- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
-- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
-- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
-- `icon` = This prop takes an icon that will be used for the toggle button.
-- `text` = This prop takes text that will be used for the toggle button.
+- `id`: Assigns an ID to the HTML element.
+- `className`: Adds classes to the HTML element.
+- `Style`: Adds inline styles to the HTML element.
+- `icon`: Icon for the toggle button.
+- `text`: Text for the toggle button.
 
 Example:
 
 ```JavaScript
-    <DarkMode icon={<FontAwesomeIcon icon={faCircleHalfStroke} fontSize={20} />} text={'Toggle Dark Mode'} />
+<DarkMode icon={<FontAwesomeIcon icon={faCircleHalfStroke} fontSize={20} />} text={'Toggle Dark Mode'} />
+```
+
+##### Button
+
+The Button component adds a styled button to the site.
+
+**Props:**
+
+- `id`: Assigns an ID to the HTML element.
+- `className`: Adds classes to the HTML element.
+- `Style`: Adds inline styles to the HTML element.
+- `text`: Text displayed on the button.
+
+Example:
+
+```JavaScript
+<Button text={"Click here to test!"} />
 ```
 
 ##### Tooltip
 
-The Tooltip component will add a tooltip to appear when the item is hovered.
+The Tooltip component adds a tooltip that appears when the item is hovered.
 
-**props**
+**Props:**
 
-- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
-- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
-- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
-- `element` = This prop takes the component that you wish the tooltip to appear over.
-- `toottipText` = This is the text that will be shown in the tooltip.
-- `position` = This determines the position the tooltip will appear.
+- `id`: Assigns an ID to the HTML element.
+- `className`: Adds classes to the HTML element.
+- `Style`: Adds inline styles to the HTML element.
+- `element`: Component to which the tooltip is applied.
+- `tooltipText`: Text displayed in the tooltip.
+- `position`: Position of the tooltip.
 
 Example:
 
 ```JavaScript
-    <Tooltip
-        element={<p>Hover me</p>}
-        tooltipText="Tooltip text..."
-        position="left"
-    />
+<Tooltip
+    element={<p>Hover me</p>}
+    tooltipText="Tooltip text..."
+    position="left"
+/>
+```
+
+##### Toast
+
+The Toast component displays a popup at the bottom of the screen when clicked.
+
+**Props:**
+
+- `className`: Adds classes to the HTML element.
+- `Style`: Adds inline styles to the HTML element.
+- `title`: Title displayed in the popup.
+- `text`: Information text displayed in the popup.
+- `timer`: Duration of the popup before closing.
+
+Example:
+
+```JavaScript
+<Toast
+    title={"Toast"}
+    text={"This is an example of the Toast component..."}
+>
+    <Button text={"Click here to test!"} />
+</Toast>
+```
+
+##### Notification
+
+The Notification component displays a popup at the top right when clicked.
+
+**Props:**
+
+- `className`: Adds classes to the HTML element.
+- `Style`: Adds inline styles to the HTML element.
+- `title`: Title displayed in the popup.
+- `text`: Information text displayed in the popup.
+- `timer`: Duration of the popup before closing.
+
+Example:
+
+```JavaScript
+<Notification
+    title={"Notification"}
+    text={"This is an example of the Notification component..."}
+>
+    <Button text={"Click here to test!"} />
+</Notification>
 ```
 
 ##### Image
 
-The Image component is used to add an image to the site that will match the sites theme.
+The Image component adds an image to the site.
 
-**props**
+**Props:**
 
-- `id` = This prop when given a value, will assign that value and an `id=""` for the html element.
-- `className` = This prop when given a value(s), will add them to the `class=""` attribute of the html element.
-- `Style` = This prop when given a value(s), will add them to the `style=""` attribute of the html element.
-- `src` = This prop takes the src value which will point to the image you want to display.
-- `alt` = This prop takes the alt text that you would like to appear when your image is hovered.
+- `id`: Assigns an ID to the HTML element.
+- `className`: Adds classes to the HTML element.
+- `Style`: Adds inline styles to the HTML element.
+- `src`: Source of the image.
+- `alt`: Alt text for the image.
 
 Example:
 
 ```JavaScript
-    <Image
-        src="/image.png"
-        alt="Image alt text..."
-    />
+<Image
+    src="/image.png"
+    alt="Image alt text..."
+/>
 ```
+
+## End Notes
+
+These components provide a comprehensive toolkit for building versatile and engaging React applications.

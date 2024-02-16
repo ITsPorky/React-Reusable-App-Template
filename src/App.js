@@ -15,6 +15,7 @@ import Home from "./components/pages/Home";
 import NavMenu from "./components/common/Menu/NavMenu";
 import NavItem from "./components/common/Menu/NavItem";
 import DropdownMenu from "./components/common/Menu/DropdownMenu";
+import Docs from "./components/pages/Docs";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
           {/* Nav menu */}
           <NavMenu>
             <NavItem link={"/React-Reusable-App-Template"} name={"Home"} />
-            <NavItem link={"/React-Reusable-App-Template/demo"} name={"Demo"} />
+            <NavItem link={"/React-Reusable-App-Template/docs"} name={"Docs"} />
             <NavItem link={"#"} name={"Dropdown"}>
               <DropdownMenu>
                 <NavItem link={"/React-Reusable-App-Template"} name={"Home"} />
@@ -46,6 +47,7 @@ function App() {
               Component={Home}
               element={<Navigate to="/React-Reusable-App-Template" />}
             />
+            <Route path="/React-Reusable-App-Template/docs" Component={Docs} />
             <Route path="/React-Reusable-App-Template/demo" Component={Demo} />
             <Route path="/redirect" element={<Navigate to="/not-found" />} />
           </Routes>

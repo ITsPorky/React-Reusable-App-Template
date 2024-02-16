@@ -20,7 +20,7 @@ const Header = ({ children }) => {
           <a href="/React-Reusable-App-Template">
             <img src={Logo} alt="App Logo" className="logo" />
           </a>
-          <p>React Template</p>
+          <p className="m-0">React Template</p>
         </div>
         {/* Nav Links */}
         <div className="md:w-2/3">
@@ -39,7 +39,7 @@ const Header = ({ children }) => {
                   }
                 />
               }
-              tooltipText="Light/Dark Mode"
+              text="Light/Dark Mode"
               position="left"
             />
           </div>

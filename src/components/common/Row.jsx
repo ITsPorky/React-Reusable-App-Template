@@ -1,15 +1,10 @@
 import React, { Children } from "react";
 
-const Row = ({
-  children,
-  id,
-  Style,
-  className = "",
-}) => {
+const Row = ({ children, id, Style, className = "" }) => {
   return (
     <div
       id={id}
-      className={`flex flex-row flex-wrap md:flex-nowrap py-10 ${className}`}
+      className={`flex flex-row flex-wrap md:flex-nowrap py-5 ${className}`}
       Style={Style}
     >
       {Children.map(children, (child) => {

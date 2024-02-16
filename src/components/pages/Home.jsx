@@ -11,7 +11,7 @@ import {
   faChevronRight,
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
-import Code from "../common/Code";
+import Code from "../common/CodeBlock";
 import Toast from "../common/Toast";
 import Notification from "../common/Notification";
 import Button from "../common/Button";
@@ -48,7 +48,6 @@ const Home = () => {
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type specimen book.
             </p>
-            <Toast text={"Notifictaion message..."} timer={4000} />
           </Column>
         </Row>
       </Section>
@@ -94,6 +93,28 @@ const Home = () => {
           <Column>
             <h3 className="text-center">Code Block</h3>
             <Code>npm install</Code>
+          </Column>
+        </Row>
+        <Row direction="row">
+          <Column className="text-center">
+            <h3>Progress</h3>
+            <progress max="100" value="70">
+              70%
+            </progress>
+          </Column>
+          <Column>
+            <h3 className="text-center">Blockquote</h3>
+            <blockquote>This is a blockquote example...</blockquote>
+          </Column>
+          <Column>
+            <h3 className="text-center">Code Block</h3>
+            <Code>npm install</Code>
+          </Column>
+        </Row>
+        <Row direction="row">
+          <Column className="text-center">
+            <h3>Forms</h3>
+            <form action=""></form>
           </Column>
         </Row>
       </Section>

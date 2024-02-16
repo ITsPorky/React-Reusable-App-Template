@@ -5,6 +5,7 @@ const Button = ({ id, className = "", Style, text, href, onClick }) => {
     <a
       href={href}
       onClick={onClick}
+      id={id}
       className={`btn ${className}`}
       Style={Style}
     >

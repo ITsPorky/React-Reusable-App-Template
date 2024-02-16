@@ -7,7 +7,7 @@ const Notification = ({
   className = "",
   title,
   text,
-  timer = 5000,
+  duration = 5000,
 }) => {
   const [isVisible, setVisible] = useState(false);
 
@@ -15,7 +15,7 @@ const Notification = ({
     setVisible(true);
     setTimeout(() => {
       setVisible(false);
-    }, timer);
+    }, duration);
   };
 
   const handleDisable = () => {

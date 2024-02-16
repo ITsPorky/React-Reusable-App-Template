@@ -1,10 +1,10 @@
 import React from "react";
 
-const Tooltip = ({ element, tooltipText, position = "bottom" }) => {
+const Tooltip = ({ element, text, position = "bottom" }) => {
   return (
     <div className="tooltip">
       {element}
-      <span className={`tooltiptext ${position}`}>{tooltipText}</span>
+      <span className={`tooltiptext ${position}`}>{text}</span>
     </div>
   );
 };

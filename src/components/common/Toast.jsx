@@ -2,14 +2,14 @@ import React, { Children, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-const Toast = ({ children, className = "", title, text, timer = 5000 }) => {
+const Toast = ({ children, className = "", title, text, duration = 5000 }) => {
   const [isVisible, setVisible] = useState(false);
 
   const handleEnable = () => {
     setVisible(true);
     setTimeout(() => {
       setVisible(false);
-    }, timer);
+    }, duration);
   };
 
   const handleDisable = () => {
