@@ -7,7 +7,7 @@ The React App Template provides a robust foundation for swiftly setting up respo
 - [Setup](#setup)
 - [Components](#components)
 
-### Setup
+## Setup
 
 To utilize this template, clone the repository and install dependencies with the following commands:
 
@@ -27,9 +27,9 @@ Then launch the application with:
 npm run start
 ```
 
-### Components
+## Components
 
-#### Layout Components
+### Layout Components
 
 The template includes the following layout components:
 
@@ -40,7 +40,7 @@ The template includes the following layout components:
 - [Row](#row)
 - [Column](#column)
 
-##### Header
+### Header
 
 The Header component serves as a template for the site's header, accepting a NavMenu as its child.
 
@@ -52,7 +52,7 @@ Example:
 </Header>
 ```
 
-#### Footer
+### Footer
 
 The Footer component acts as a template for the site's footer and does not require any children.
 
@@ -62,7 +62,7 @@ Example:
 <Footer />
 ```
 
-##### FullSection
+### FullSection
 
 The FullSection component is a container that spans the full width of the site, accommodating child components.
 
@@ -82,7 +82,7 @@ Example:
 </FullSection>
 ```
 
-##### Section
+### Section
 
 The Section component is a container that spans the full width of the page but restricts contents to the center.
 
@@ -102,7 +102,7 @@ Example:
 </Section>
 ```
 
-##### Row
+### Row
 
 The Row component holds Column components in a flex-row, responsively wrapping the columns.
 
@@ -121,7 +121,7 @@ Example:
 </Row>
 ```
 
-##### Column
+### Column
 
 The Column component holds content in a column within a Row component, allowing responsive wrapping.
 
@@ -146,7 +146,7 @@ Example:
 </Row>
 ```
 
-#### Utility Components
+### Utility Components
 
 - [NavMenu](#navmenu)
 - [NavItem](#navitem)
@@ -159,7 +159,7 @@ Example:
 - [Notification](#notification)
 - [Image](#image)
 
-##### NavMenu
+### NavMenu
 
 The NavMenu component manages NavItem components to create navigation links for the site.
 
@@ -179,7 +179,7 @@ Example:
 </NavMenu>
 ```
 
-##### NavItem
+### NavItem
 
 The NavItem component creates navigation links for the site.
 
@@ -201,7 +201,7 @@ Example:
 </NavMenu>
 ```
 
-##### DropdownMenu
+### DropdownMenu
 
 The DropdownMenu component creates dropdown menus for navlinks with additional options.
 
@@ -229,7 +229,7 @@ Example:
 </NavMenu>
 ```
 
-##### Drawer
+### Drawer
 
 The Drawer component creates slide-in menus from the side containing desired content.
 
@@ -258,7 +258,7 @@ Example:
 </Drawer>
 ```
 
-##### DarkMode
+### DarkMode
 
 The DarkMode component toggles between light and dark mode for the site.
 
@@ -276,7 +276,7 @@ Example:
 <DarkMode icon={<FontAwesomeIcon icon={faCircleHalfStroke} fontSize={20} />} text={'Toggle Dark Mode'} />
 ```
 
-##### Button
+### Button
 
 The Button component adds a styled button to the site.
 
@@ -293,7 +293,7 @@ Example:
 <Button text={"Click here to test!"} />
 ```
 
-##### Tooltip
+### Tooltip
 
 The Tooltip component adds a tooltip that appears when the item is hovered.
 
@@ -316,7 +316,7 @@ Example:
 />
 ```
 
-##### Toast
+### Toast
 
 The Toast component displays a popup at the bottom of the screen when clicked.
 
@@ -339,7 +339,7 @@ Example:
 </Toast>
 ```
 
-##### Notification
+### Notification
 
 The Notification component displays a popup at the top right when clicked.
 
@@ -362,7 +362,7 @@ Example:
 </Notification>
 ```
 
-##### Image
+### Image
 
 The Image component adds an image to the site.
 
