@@ -52,7 +52,7 @@ html {
 body,
 header,
 footer,
-pre code,
+code,
 .dropdown-container,
 blockquote {
   -webkit-transition: var(--ease-transition);
@@ -165,8 +165,8 @@ a:hover {
 
 pre code {
   display: block;
-  color: var(--dark-text);
-  background: var(--light-bg-secondary);
+  /* color: var(--dark-text);
+  background: var(--light-bg-secondary); */
   border-radius: var(--border-radius);
   text-align: left;
   padding: 0.6rem;
@@ -182,7 +182,6 @@ code {
   padding: 0.2rem;
 }
 
-.dark pre code,
 .dark code {
   color: var(--light-text);
   background: var(--dark-bg-secondary);
@@ -397,12 +396,12 @@ progress[value]::-webkit-progress-value {
 }
 
 .tooltip .tooltiptext.right {
-  top: 0px;
+  top: 3px;
   left: 105%;
 }
 
 .tooltip .tooltiptext.left {
-  top: 0px;
+  top: 3px;
   right: 105%;
 }
 
