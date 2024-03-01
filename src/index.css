@@ -570,6 +570,10 @@ progress[value]::-webkit-progress-value {
 
 /* Slick Slider */
 
+.slick-slider svg {
+  z-index: 99;
+}
+
 .dark .slick-next,
 .dark .slick-prev {
   color: var(--light-text) !important;
