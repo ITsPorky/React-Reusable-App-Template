@@ -18,6 +18,7 @@
   --error: #fd4a4a;
   --header-height: 70px;
   --border-radius: 5px;
+  --label-border-radius: 2rem;
   --box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   --box-shadow-popup: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   --ease-transition: 0.3s ease-in-out;
@@ -227,6 +228,14 @@ progress[value]::-webkit-progress-value {
 }
 
 /* END demo page styles (Only for testing) REMOVE END */
+
+.label {
+  color: var(--light-text);
+  background: var(--accent);
+  display: inline-block;
+  padding: 0rem 0.5rem;
+  border-radius: var(--label-border-radius);
+}
 
 /* NavDrawerMenu Styles */
 
