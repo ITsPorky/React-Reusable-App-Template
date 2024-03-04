@@ -15,6 +15,7 @@ import Code from "../common/CodeBlock";
 import Toast from "../common/Toast";
 import Notification from "../common/Notification";
 import Button from "../common/Button";
+import Label from "../common/Label";
 
 const Home = () => {
   return (
@@ -103,8 +104,8 @@ const Home = () => {
             </progress>
           </Column>
           <Column>
-            <h3 className="text-center">Blockquote</h3>
-            <blockquote>This is a blockquote example...</blockquote>
+            <h3 className="text-center">Labels</h3>
+            <Label text="Label" />
           </Column>
           <Column>
             <h3 className="text-center">Code Block</h3>
