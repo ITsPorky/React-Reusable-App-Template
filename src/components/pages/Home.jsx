@@ -201,7 +201,7 @@ const Home = () => {
           </Column>
         </Row>
       </Section>
-      <Section id="Testimonials">
+      {/* <Section id="Testimonials">
         <Row>
           <Column className="text-center">
             <Slider
@@ -251,7 +251,7 @@ const Home = () => {
             </Slider>
           </Column>
         </Row>
-      </Section>
+      </Section> */}
     </>
   );
 };
