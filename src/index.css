@@ -7,7 +7,8 @@
   --font-primary: "Rubik Mono One", monospace;
   --font-secondary: "Rubik", sans-serif;
   --font-icons: "Font Awesome 6 Free";
-  --footer-bg: #161b22;
+  --footer-bg-light: #e1e9ef;
+  --footer-bg-dark: #0b1215;
   --dark-bg: #161b22;
   --dark-bg-secondary: #1f2630;
   --dark-text: #0b1215;
@@ -75,7 +76,7 @@ header {
 
 footer {
   color: var(--dark-text);
-  background: var(--footer-bg);
+  background: var(--footer-bg-light);
 }
 
 main {
@@ -162,8 +163,10 @@ a::after {
 }
 
 .btn {
+  text-align: center;
   background: var(--dark-bg);
   color: var(--light-text);
+  border: 1px solid var(--dark-bg);
   display: inline-block;
   padding: 0.5rem 1.25rem;
   border-radius: var(--border-radius);
@@ -174,6 +177,19 @@ a::after {
 .dark .btn {
   background: var(--light-bg);
   color: var(--dark-text);
+  border: 1px solid var(--light-bg);
+}
+
+.btn.secondary {
+  background: var(--light-bg);
+  color: var(--dark-text);
+  border: 1px solid var(--dark-bg);
+}
+
+.dark .btn.secondary {
+  background: var(--dark-bg);
+  color: var(--light-text);
+  border: 1px solid var(--light-bg);
 }
 
 pre code {
@@ -184,7 +200,7 @@ pre code {
   text-align: left;
   padding: 0.6rem;
   margin: 1rem 0;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 code {
@@ -216,14 +232,26 @@ progress[value]::-webkit-progress-value {
   border-radius: var(--border-radius);
 }
 
+.success {
+  background: var(--success) !important;
+}
+
+.error {
+  background: var(--error) !important;
+}
+
 /* Dark Mode */
 .dark {
   background: var(--dark-bg) !important;
   color: var(--light-text) !important;
 }
 
+.dark footer {
+  background: var(--footer-bg-dark) !important;
+  color: var(--light-text) !important;
+}
+
 .dark header,
-.dark footer,
 .dark .drawer {
   background: var(--dark-bg) !important;
   color: var(--light-text) !important;
@@ -242,11 +270,33 @@ progress[value]::-webkit-progress-value {
 /* END demo page styles (Only for testing) REMOVE END */
 
 .label {
-  color: var(--light-text);
-  background: var(--accent);
+  color: var(--dark-text);
+  background: var(--light-bg-secondary);
   display: inline-block;
   padding: 0rem 0.5rem;
+  margin-right: .2rem;
   border-radius: var(--label-border-radius);
+  transition: var(--ease-transition);
+}
+
+.dark .label {
+  color: var(--light-text);
+  background: var(--dark-bg-secondary);
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--dark-bg);
+  color: var(--light-text);
+  z-index: 999;
+}
+
+.dark .topbar {
+  background: var(--light-bg);
+  color: var(--dark-text);
 }
 
 /* NavDrawerMenu Styles */
@@ -322,7 +372,7 @@ progress[value]::-webkit-progress-value {
 .dropdown-container {
   position: absolute;
   color: var(--dark-text);
-  background: var(--light-bg);
+  background: var(--light-bg-secondary);
   width: 100%;
   transform: translate(0%, 0%);
   box-shadow: var(--box-shadow);
@@ -521,6 +571,10 @@ progress[value]::-webkit-progress-value {
   transform: translate(-5%, 20%);
 }
 
+.notification .close {
+  cursor: pointer;
+}
+
 .dark .notification {
   color: var(--light-text);
   background: var(--dark-bg-secondary);
@@ -561,6 +615,10 @@ progress[value]::-webkit-progress-value {
 
 .toast.open {
   transform: translate(50%, -20px);
+}
+
+.toast .close {
+  cursor: pointer;
 }
 
 .dark .toast {

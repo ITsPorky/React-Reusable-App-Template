@@ -35,7 +35,7 @@ const Notification = ({
           <div>
             <b>{title}</b>
           </div>
-          <div onClick={handleDisable}>
+          <div className="close" onClick={handleDisable}>
             <FontAwesomeIcon icon={faXmark} fontSize={20} />
           </div>
         </div>

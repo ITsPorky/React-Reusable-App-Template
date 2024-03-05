@@ -29,7 +29,7 @@ const Toast = ({ children, className = "", title, text, duration = 5000 }) => {
           <div>
             <b>{title}</b>
           </div>
-          <div onClick={handleDisable}>
+          <div className="close" onClick={handleDisable}>
             <FontAwesomeIcon icon={faXmark} fontSize={20} />
           </div>
         </div>

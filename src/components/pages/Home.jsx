@@ -106,10 +106,13 @@ const Home = () => {
           <Column>
             <h3 className="text-center">Labels</h3>
             <Label text="Label" />
+            <Label text="Success" className="success"/>
+            <Label text="Error" className="error"/>
           </Column>
           <Column>
-            <h3 className="text-center">Code Block</h3>
-            <Code>npm install</Code>
+            <h3 className="text-center">Buttons</h3>
+            <Button text="Primary" type="primary" className="w-full mb-2"/>
+            <Button text="Secondary" type="secondary" className="w-full mb-2"/>
           </Column>
         </Row>
         <Row direction="row">

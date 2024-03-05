@@ -1,12 +1,12 @@
 import React from "react";
 
-const Button = ({ id, className = "", Style, text, href, onClick }) => {
+const Button = ({ id, className = "", Style, type="primary", text, href, onClick }) => {
   return (
     <a
       href={href}
       onClick={onClick}
       id={id}
-      className={`btn ${className}`}
+      className={`btn ${type} ${className}`}
       Style={Style}
     >
       {text}
