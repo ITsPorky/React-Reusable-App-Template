@@ -65,7 +65,9 @@ blockquote {
 }
 
 header {
-  position: fixed;
+  position: sticky;
+  top: 0;
+  left: 0;
   width: 100%;
   height: var(--header-height);
   z-index: 999;
@@ -285,9 +287,7 @@ progress[value]::-webkit-progress-value {
 }
 
 .topbar {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   background: var(--dark-bg);
   color: var(--light-text);
@@ -636,6 +636,61 @@ progress[value]::-webkit-progress-value {
 
 .toast-body {
   padding: 0.3rem 0;
+}
+
+/* Price Card Styles */
+
+.pricing-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.price-card {
+  display: block; 
+  width: 100%;
+  max-width: 350px;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: calc(var(--border-radius) + 0.5rem);
+  background: var(--dark-bg);
+  color: var(--light-text);
+  border: 1px solid var(--dark-bg);
+  transition: var(--ease-transition);
+}
+
+.price-card.highlighted {
+  background: var(--accent);
+  background: rgb(22,27,34);
+  background: linear-gradient(180deg, rgba(74,179,253,1) 15%, rgba(22,27,34,1) 100%);
+  color: var(--light-text);
+  border: 1px solid var(--light-bg);
+  transition: var(--ease-transition);
+}
+
+.dark .price-card {
+  background: var(--dark-bg-secondary);
+  color: var(--light-text);
+  border: 1px solid var(--dark-bg-secondary);
+}
+
+.dark .price-card.highlighted {
+  background: var(--accent);
+  background: rgb(22,27,34);
+  background: linear-gradient(180deg, rgba(74,179,253,1) 15%, rgba(240,248,255,1) 100%);
+  color: var(--dark-text);
+  border: 1px solid var(--dark-bg-secondary);
+}
+
+.price-card .title {
+  text-align: center;
+}
+
+.price-card .content {
+  font-size: 1.2rem;
+  text-align: left;
+  margin-bottom: 1rem;
 }
 
 /* Customize website's scrollbar like Mac OS

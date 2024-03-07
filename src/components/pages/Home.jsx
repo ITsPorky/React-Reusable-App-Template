@@ -16,6 +16,8 @@ import Toast from "../common/Toast";
 import Notification from "../common/Notification";
 import Button from "../common/Button";
 import Label from "../common/Label";
+import PriceCard from "../common/PriceCard";
+import PricingContainer from "../common/PricingContainer";
 
 const Home = () => {
   return (
@@ -119,6 +121,31 @@ const Home = () => {
           <Column className="text-center">
             <h3>Forms</h3>
             <form action=""></form>
+          </Column>
+        </Row>
+        <Row>
+          <Column>
+            <PricingContainer>
+              <PriceCard title="Low Tier">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </PriceCard>
+              <PriceCard className="highlighted" title="Premium Tier">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+                <li>Item 5</li>
+                <li>Item 6</li>
+              </PriceCard>
+              <PriceCard title="High Tier">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+              </PriceCard>
+            </PricingContainer>
           </Column>
         </Row>
       </Section>

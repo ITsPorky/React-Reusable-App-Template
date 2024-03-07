@@ -49,7 +49,8 @@ function App() {
             />
             <Route path="/React-Reusable-App-Template/docs" Component={Docs} />
             <Route path="/React-Reusable-App-Template/demo" Component={Demo} />
-            <Route path="/redirect" element={<Navigate to="/not-found" />} />
+            <Route path="/React-Reusable-App-Template/docs" element={<Navigate to={Docs} />} />
+            <Route path="/React-Reusable-App-Template/demo" element={<Navigate to={Demo} />} />
           </Routes>
         </main>
       </Router>

@@ -34,6 +34,7 @@ npm run start
 The template includes the following layout components:
 
 - [Header](#header)
+- [TopBar](#topbar)
 - [Footer](#footer)
 - [FullSection](#fullsection)
 - [Section](#section)
@@ -50,6 +51,16 @@ Example:
 <Header>
     <NavMenu></NavMenu>
 </Header>
+```
+
+### TopBar
+
+The TopBar component is a annoucement bar that should be placed above the header component.
+
+Example:
+
+```JavaScript
+<TopBar text="This is an example react.js template with reusable components..."/>
 ```
 
 ### Footer
@@ -381,6 +392,49 @@ Example:
     src="/image.png"
     alt="Image alt text..."
 />
+```
+
+### PricingContainer
+
+The PricingContainer component is used to wrap around PriceCard components to display them correctly.
+
+**Props:**
+
+- `className`: Adds classes to the HTML element.
+- `Style`: Adds inline styles to the HTML element.
+
+Example:
+
+```JavaScript
+<PricingContainer>
+    <PriceCard title="Price Card Title">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </PriceCard>
+</PricingContainer>
+```
+
+### PriceCard
+
+The PriceCard component is used to create pricing cards that display pricing tier information with features and a button link.
+
+**Props:**
+
+- `className`: Adds classes to the HTML element.
+- `Style`: Adds inline styles to the HTML element.
+- `title`: Title displayed on the card.
+
+To add features to the list, add each as a `<li></li>` element.
+
+Example:
+
+```JavaScript
+<PriceCard title="Price Card Title">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</PriceCard>
 ```
 
 ## End Notes
