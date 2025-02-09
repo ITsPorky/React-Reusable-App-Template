@@ -5,13 +5,14 @@ const Drawer = ({ children, openIcon, closeIcon, openText, closeText }) => {
   // Custom Hook to close container when clicking outside
   const ref = useRef(null);
 
+  // On first load, On update, and on unload of the component
   useEffect(() => {
     document.addEventListener("click", handleClickOutside, !isDrawerOpen);
 
     return () => {
       document.removeEventListener("click", handleClickOutside, !isDrawerOpen);
     };
-  });
+  }, []); // Array at the end is useful for passing dependencies such as state, so if one of the dependecies is updated the hook is called.
 
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
