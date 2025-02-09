@@ -12,6 +12,7 @@ import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import Demo from "./components/pages/Demo";
 import Home from "./components/pages/Home";
+import JDMAppCoreDemo from "./components/pages/JDMAppCoreDemo";
 import NavMenu from "./components/common/Menu/NavMenu";
 import NavItem from "./components/common/Menu/NavItem";
 import DropdownMenu from "./components/common/Menu/DropdownMenu";
@@ -33,6 +34,10 @@ function App() {
                   link={"/React-Reusable-App-Template/demo"}
                   name={"Demo"}
                 />
+                <NavItem
+                  link={"/React-Reusable-App-Template/jdmappcoredemo"}
+                  name={"JDMAppCoreDemo"}
+                />
                 <NavItem link={"#"} name={"Contact"} />
               </DropdownMenu>
             </NavItem>
@@ -49,8 +54,18 @@ function App() {
             />
             <Route path="/React-Reusable-App-Template/docs" Component={Docs} />
             <Route path="/React-Reusable-App-Template/demo" Component={Demo} />
-            <Route path="/React-Reusable-App-Template/docs" element={<Navigate to={Docs} />} />
-            <Route path="/React-Reusable-App-Template/demo" element={<Navigate to={Demo} />} />
+            <Route
+              path="/React-Reusable-App-Template/jdmappcoredemo"
+              Component={JDMAppCoreDemo}
+            />
+            <Route
+              path="/React-Reusable-App-Template/docs"
+              element={<Navigate to={Docs} />}
+            />
+            <Route
+              path="/React-Reusable-App-Template/demo"
+              element={<Navigate to={Demo} />}
+            />
           </Routes>
         </main>
       </Router>
