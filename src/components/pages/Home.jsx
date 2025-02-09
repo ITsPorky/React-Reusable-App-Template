@@ -18,6 +18,7 @@ import Button from "../common/Button";
 import Label from "../common/Label";
 import PriceCard from "../common/PriceCard";
 import PricingContainer from "../common/PricingContainer";
+import ImageComparisonTool from "../common/ImageComparisonTool";
 
 const Home = () => {
   return (
@@ -146,6 +147,14 @@ const Home = () => {
                 <li>Item 4</li>
               </PriceCard>
             </PricingContainer>
+          </Column>
+        </Row>
+      </Section>
+      <Section id="ImageComparison">
+        <Row direction="row">
+          <Column className="text-center">
+            <h3>Image Comparison Tool</h3>
+            <ImageComparisonTool />
           </Column>
         </Row>
       </Section>
