@@ -23,6 +23,8 @@ const ModalDialog = forwardRef(
   ) => {
     // #region State
     const [isShown, setShow] = useState(false);
+    const [modalTitle, setModalTitle] = useState(title);
+    const [modalContents, setModalContents] = useState(contents);
     // #endregion
 
     // #region Refs
@@ -40,6 +42,16 @@ const ModalDialog = forwardRef(
       toggleShow: () => toggleShow(),
       show: () => show(),
       hide: () => hide(),
+      setTitle: (newTitle) => setModalTitle(newTitle),
+      setContents: (newContents) => setModalContents(newContents),
+      getRefs: () => ({
+        divFgd: divFgd.current,
+        divBgd: divBgd.current,
+        container: container.current,
+        titleBar: titleBar.current,
+        titleContent: titleContent.current,
+        content: content.current,
+      }),
     }));
 
     const toggleShow = () => {
@@ -97,7 +109,7 @@ const ModalDialog = forwardRef(
                 >
                   {icon}
                 </span>
-                <p ref={titleContent}>{title}</p>
+                <p ref={titleContent}>{modalTitle}</p>
               </p>
               <span
                 className="material-symbols-outlined"
@@ -108,7 +120,7 @@ const ModalDialog = forwardRef(
               </span>
             </div>
             <div ref={content} className="jdm-modal-content">
-              {contents}
+              {modalContents}
             </div>
           </div>
         </div>

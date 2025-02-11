@@ -22,6 +22,7 @@ const JDMAppCoreDemo = () => {
               contents={<p>This is a modal content</p>}
               portalRoot={document.body}
             />
+            {() => modalRef.current.setTitle("Updated Title!")}
             <Button
               onClick={() => modalRef.current.show()}
               text={"Click to test ModalDialog"}
