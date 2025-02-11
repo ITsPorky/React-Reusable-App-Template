@@ -16,8 +16,16 @@ const JDMAppCoreDemo = () => {
           <Column className="text-center">
             <h1>Component and Style Examples</h1>
             <p>This Page showcases each component and styles.</p>
-            <ModalDialog ref={modalRef}/>
-            <Button onClick={() => modalRef.current.toggleShow()} />
+            <ModalDialog
+              ref={modalRef}
+              title="Example Modal"
+              contents={<p>This is a modal content</p>}
+              portalRoot={document.body}
+            />
+            <Button
+              onClick={() => modalRef.current.show()}
+              text={"Click to test ModalDialog"}
+            />
           </Column>
         </Row>
       </FullSection>
