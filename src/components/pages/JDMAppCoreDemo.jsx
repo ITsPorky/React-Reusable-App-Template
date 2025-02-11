@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 import Section from "../common/Section";
 import Row from "../common/Row";
 import Column from "../common/Column";
 import FullSection from "../common/FullSection";
+import Button from "../common/Button";
 import { ModalDialog } from "../../JDMAppCore/JDMAppCore";
 
 const JDMAppCoreDemo = () => {
+  const modalRef = useRef(null);
+
   return (
     <>
       <FullSection id="FullSection1">
@@ -13,6 +16,8 @@ const JDMAppCoreDemo = () => {
           <Column className="text-center">
             <h1>Component and Style Examples</h1>
             <p>This Page showcases each component and styles.</p>
+            <ModalDialog ref={modalRef}/>
+            <Button onClick={() => modalRef.current.toggleShow()} />
           </Column>
         </Row>
       </FullSection>

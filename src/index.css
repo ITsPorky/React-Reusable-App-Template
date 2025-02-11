@@ -662,9 +662,8 @@ progress[value]::-webkit-progress-value {
 
 .price-card.highlighted {
   background: var(--accent);
-  background: rgb(22,27,34);
-  background: linear-gradient(180deg, rgba(74,179,253,1) 15%, rgba(22,27,34,1) 100%);
-  color: var(--light-text);
+  background: var(--light-bg-secondary);
+  color: var(--dark-text);
   border: 1px solid var(--light-bg);
   transition: var(--ease-transition);
 }
@@ -677,8 +676,7 @@ progress[value]::-webkit-progress-value {
 
 .dark .price-card.highlighted {
   background: var(--accent);
-  background: rgb(22,27,34);
-  background: linear-gradient(180deg, rgba(74,179,253,1) 15%, rgba(240,248,255,1) 100%);
+  background: var(--light-bg);
   color: var(--dark-text);
   border: 1px solid var(--dark-bg-secondary);
 }
@@ -751,6 +749,25 @@ progress[value]::-webkit-progress-value {
 .image-comparison-block {
   max-width: 250px;
   padding: 1rem;
+}
+
+input[type=file] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px dashed var(--dark-text);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  cursor: pointer;
+  background: var(--light-bg-secondary);
+  color: var(--dark-text);
+  transition: var(--ease-transition);
+}
+
+.dark input[type=file] {
+  border: 1px dashed var(--light-bg);
+  border-radius: var(--border-radius);
+  background: var(--dark-bg-secondary);
+  color: var(--light-text);
 }
 
 /* Customize website's scrollbar like Mac OS
