@@ -44,14 +44,6 @@ const ModalDialog = forwardRef(
       hide: () => hide(),
       setTitle: (newTitle) => setModalTitle(newTitle),
       setContents: (newContents) => setModalContents(newContents),
-      getRefs: () => ({
-        divFgd: divFgd.current,
-        divBgd: divBgd.current,
-        container: container.current,
-        titleBar: titleBar.current,
-        titleContent: titleContent.current,
-        content: content.current,
-      }),
     }));
 
     const toggleShow = () => {
@@ -134,3 +126,96 @@ const ModalDialog = forwardRef(
 
 export { ModalDialog };
 // #endregion Modal Dialog
+
+// #region Ask Questions
+
+const AskQuestion = forwardRef(
+  (
+    {
+      contents = null,
+      icon = null,
+      title = "",
+      fnYes = null,
+      fnNo = null,
+      portalRoot = document.body,
+    },
+    ref
+  ) => {
+    // #region State & Refs
+    const [questionTitle, setQuestionTitle] = useState(title);
+    const [questionContents, setQuestionContents] = useState(contents);
+
+    const modalRef = useRef(null);
+    // #endregion
+
+    // #region Methods
+    // Pass methods up for parent access
+    useImperativeHandle(ref, () => ({
+      show: () => show(),
+      hide: () => hide(),
+      setTitle: (newTitle) => setQuestionTitle(newTitle),
+      setContents: (newContents) => setQuestionContents(newContents),
+    }));
+
+    const show = () => {
+      modalRef.current.show(true);
+    };
+
+    const hide = () => {
+      modalRef.current.show(false);
+    };
+    // #endregion
+
+    const content = (
+      <div className="jdm-askquestion-container">
+        <div className="jdm-askquestion-wrapper">
+          {icon && (
+            <span
+              className="material-symbols-outlined"
+              style={"font-size:36px;margin-right:8px;align-self:flex-start"}
+            >
+              {icon}
+            </span>
+          )}
+          {questionContents}
+          <div className="jdm-askquestion-buttons">
+            <span
+              className="jdm-askquestion-yes"
+              onClick={() => {
+                modalRef.current.hide();
+                fnYes && fnYes();
+              }}
+            >
+              <span class="material-symbols-outlined">done</span>
+              Yes
+            </span>
+            <span
+              className="jdm-askquestion-no"
+              onClick={() => {
+                modalRef.current.hide();
+                fnNo && fnNo();
+              }}
+            >
+              <span class="material-symbols-outlined">close</span>
+              No
+            </span>
+          </div>
+        </div>
+      </div>
+    );
+
+    return (
+      <ModalDialog
+        ref={modalRef}
+        contents={content}
+        title={questionTitle}
+        width={"auto"}
+        portalRoot={portalRoot}
+      />
+    );
+  }
+);
+
+export { AskQuestion };
+
+// #endregion

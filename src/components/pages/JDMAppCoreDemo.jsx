@@ -4,10 +4,18 @@ import Row from "../common/Row";
 import Column from "../common/Column";
 import FullSection from "../common/FullSection";
 import Button from "../common/Button";
-import { ModalDialog } from "../../JDMAppCore/JDMAppCore";
+import { AskQuestion, ModalDialog } from "../../JDMAppCore/JDMAppCore";
 
 const JDMAppCoreDemo = () => {
   const modalRef = useRef(null);
+  const askQuestionRef = useRef(null);
+
+  const contents = (
+    <div>
+      <h3>Content</h3>
+      <p>this is the body of my content!</p>
+    </div>
+  );
 
   return (
     <>
@@ -16,16 +24,21 @@ const JDMAppCoreDemo = () => {
           <Column className="text-center">
             <h1>Component and Style Examples</h1>
             <p>This Page showcases each component and styles.</p>
-            <ModalDialog
-              ref={modalRef}
-              title="Example Modal"
-              contents={<p>This is a modal content</p>}
-              portalRoot={document.body}
-            />
-            {() => modalRef.current.setTitle("Updated Title!")}
             <Button
-              onClick={() => modalRef.current.show()}
-              text={"Click to test ModalDialog"}
+              onClick={() => {
+                modalRef.current.setTitle("New Title 1!");
+                modalRef.current.setContents(contents);
+                modalRef.current.show();
+              }}
+              text={"Click to test ModalDialog 1"}
+            />
+            <Button
+              onClick={() => {
+                modalRef.current.setTitle("New Title 2!");
+                modalRef.current.setContents(<p>Content 2</p>);
+                modalRef.current.show();
+              }}
+              text={"Click to test ModalDialog 2"}
             />
           </Column>
         </Row>
@@ -33,23 +46,32 @@ const JDMAppCoreDemo = () => {
       <Section id="Section1">
         <Row direction="row">
           <Column className="text-center">
-            <h1>Heading 1</h1>
-            <h2>Heading 2</h2>
-            <h3>Heading 3</h3>
-            <h4>Heading 4</h4>
-            <h5>Heading 5</h5>
-            <h6>Heading 6</h6>
-            <br />
-            <p>Paragraph</p>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
+            <h1>Component and Style Examples</h1>
+            <p>This Page showcases each component and styles.</p>
+            <Button
+              onClick={() => {
+                askQuestionRef.current.show();
+              }}
+              text={"Click to test AskQuestion 1"}
+            />
+            <Button
+              onClick={() => {
+                askQuestionRef.current.setTitle("New Title 3!");
+                askQuestionRef.current.setContents(<p>Content 3</p>);
+                askQuestionRef.current.show();
+              }}
+              text={"Click to test AskQuestion 2"}
+            />
           </Column>
         </Row>
       </Section>
+      <AskQuestion ref={askQuestionRef} title="Ask Question" />
+      <ModalDialog
+        ref={modalRef}
+        title="Example Modal"
+        contents={<p>This is a modal content</p>}
+        portalRoot={document.body}
+      />
     </>
   );
 };
