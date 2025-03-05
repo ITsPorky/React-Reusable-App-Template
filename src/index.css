@@ -276,7 +276,7 @@ progress[value]::-webkit-progress-value {
   background: var(--light-bg-secondary);
   display: inline-block;
   padding: 0rem 0.5rem;
-  margin-right: .2rem;
+  margin-right: 0.2rem;
   border-radius: var(--label-border-radius);
   transition: var(--ease-transition);
 }
@@ -373,7 +373,7 @@ progress[value]::-webkit-progress-value {
   position: absolute;
   color: var(--dark-text);
   background: var(--light-bg-secondary);
-  width: 100%;
+  width: auto;
   transform: translate(0%, 0%);
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
@@ -648,7 +648,7 @@ progress[value]::-webkit-progress-value {
 }
 
 .price-card {
-  display: block; 
+  display: block;
   width: 100%;
   max-width: 350px;
   padding: 1rem;
@@ -662,9 +662,8 @@ progress[value]::-webkit-progress-value {
 
 .price-card.highlighted {
   background: var(--accent);
-  background: rgb(22,27,34);
-  background: linear-gradient(180deg, rgba(74,179,253,1) 15%, rgba(22,27,34,1) 100%);
-  color: var(--light-text);
+  background: var(--light-bg-secondary);
+  color: var(--dark-text);
   border: 1px solid var(--light-bg);
   transition: var(--ease-transition);
 }
@@ -677,8 +676,7 @@ progress[value]::-webkit-progress-value {
 
 .dark .price-card.highlighted {
   background: var(--accent);
-  background: rgb(22,27,34);
-  background: linear-gradient(180deg, rgba(74,179,253,1) 15%, rgba(240,248,255,1) 100%);
+  background: var(--light-bg);
   color: var(--dark-text);
   border: 1px solid var(--dark-bg-secondary);
 }
@@ -695,7 +693,8 @@ progress[value]::-webkit-progress-value {
 
 /* Image Comparison */
 
-.image-comparison-container {}
+.image-comparison-container {
+}
 
 .image-comparison-window {
   position: relative;
@@ -732,7 +731,7 @@ progress[value]::-webkit-progress-value {
   background: #ffffff00;
   outline: none;
   margin: 0;
-  transition: all .2s;
+  transition: all 0.2s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -751,6 +750,25 @@ progress[value]::-webkit-progress-value {
 .image-comparison-block {
   max-width: 250px;
   padding: 1rem;
+}
+
+input[type="file"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px dashed var(--dark-text);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  cursor: pointer;
+  background: var(--light-bg-secondary);
+  color: var(--dark-text);
+  transition: var(--ease-transition);
+}
+
+.dark input[type="file"] {
+  border: 1px dashed var(--light-bg);
+  border-radius: var(--border-radius);
+  background: var(--dark-bg-secondary);
+  color: var(--light-text);
 }
 
 /* Customize website's scrollbar like Mac OS
