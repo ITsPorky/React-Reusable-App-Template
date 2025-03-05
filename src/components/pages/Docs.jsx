@@ -93,12 +93,12 @@ const Docs = () => {
             <b>Example:</b>
             <CodeBlock>
               {`<Header>
-  <NavMenu>
-    <NavItem link={"/"} name={"Home"} />
-    <NavItem link={"/docs"} name={"Docs"} />
-    <NavItem link={"/Contact"} name={"Contact"} />
-  </NavMenu>
-</Header>`}
+                <NavMenu>
+                  <NavItem link={"/"} name={"Home"} />
+                  <NavItem link={"/docs"} name={"Docs"} />
+                  <NavItem link={"/Contact"} name={"Contact"} />
+                </NavMenu>
+              </Header>`}
             </CodeBlock>
           </Column>
         </Row>
@@ -124,6 +124,7 @@ const Docs = () => {
               wrap children components. The FullSection will span the full width
               of the site.
             </p>
+            <blockquote>
             <b>props:</b>
             <ul>
               <li>
@@ -136,6 +137,7 @@ const Docs = () => {
                 <Code>Style</Code>: Adds inline styles to the HTML element.
               </li>
             </ul>
+            </blockquote>
           </Column>
           <Column>
             <b>Example:</b>
@@ -157,18 +159,20 @@ const Docs = () => {
               the page but wil then be restircted to contain the contents in the
               center of the screen.
             </p>
-            <b>props:</b>
-            <ul>
-              <li>
-                <Code>id</Code>: Assigns an ID to the HTML element.
-              </li>
-              <li>
-                <Code>className</Code>: Adds classes to the HTML element.
-              </li>
-              <li>
-                <Code>Style</Code>: Adds inline styles to the HTML element.
-              </li>
-            </ul>
+            <blockquote>
+              <b>props:</b>
+              <ul>
+                <li>
+                  <Code>id</Code>: Assigns an ID to the HTML element.
+                </li>
+                <li>
+                  <Code>className</Code>: Adds classes to the HTML element.
+                </li>
+                <li>
+                  <Code>Style</Code>: Adds inline styles to the HTML element.
+                </li>
+              </ul>
+            </blockquote>
           </Column>
           <Column>
             <b>Example:</b>
@@ -188,18 +192,20 @@ const Docs = () => {
               The Row component holds Column components into a flex-row that
               will responsivly wrap the columns.
             </p>
-            <b>props:</b>
-            <ul>
-              <li>
-                <Code>id</Code>: Assigns an ID to the HTML element.
-              </li>
-              <li>
-                <Code>className</Code>: Adds classes to the HTML element.
-              </li>
-              <li>
-                <Code>Style</Code>: Adds inline styles to the HTML element.
-              </li>
-            </ul>
+            <blockquote>
+              <b>props:</b>
+              <ul>
+                <li>
+                  <Code>id</Code>: Assigns an ID to the HTML element.
+                </li>
+                <li>
+                  <Code>className</Code>: Adds classes to the HTML element.
+                </li>
+                <li>
+                  <Code>Style</Code>: Adds inline styles to the HTML element.
+                </li>
+              </ul>
+            </blockquote>
           </Column>
           <Column>
             <b>Example:</b>
@@ -218,18 +224,20 @@ const Docs = () => {
               component. Columns added to a Row component will sit next to
               eachother within the row until wrapping responsivly.
             </p>
-            <b>props:</b>
-            <ul>
-              <li>
-                <Code>id</Code>: Assigns an ID to the HTML element.
-              </li>
-              <li>
-                <Code>className</Code>: Adds classes to the HTML element.
-              </li>
-              <li>
-                <Code>Style</Code>: Adds inline styles to the HTML element.
-              </li>
-            </ul>
+            <blockquote>
+              <b>props:</b>
+              <ul>
+                <li>
+                  <Code>id</Code>: Assigns an ID to the HTML element.
+                </li>
+                <li>
+                  <Code>className</Code>: Adds classes to the HTML element.
+                </li>
+                <li>
+                  <Code>Style</Code>: Adds inline styles to the HTML element.
+                </li>
+              </ul>
+            </blockquote>
           </Column>
           <Column>
             <b>Example:</b>
@@ -257,18 +265,20 @@ const Docs = () => {
               The NavMenu component manages NavItem components to create
               navigation links for the site.
             </p>
-            <b>props:</b>
-            <ul>
-              <li>
-                <Code>id</Code>: Assigns an ID to the HTML element.
-              </li>
-              <li>
-                <Code>className</Code>: Adds classes to the HTML element.
-              </li>
-              <li>
-                <Code>Style</Code>: Adds inline styles to the HTML element.
-              </li>
-            </ul>
+            <blockquote>
+              <b>props:</b>
+              <ul>
+                <li>
+                  <Code>id</Code>: Assigns an ID to the HTML element.
+                </li>
+                <li>
+                  <Code>className</Code>: Adds classes to the HTML element.
+                </li>
+                <li>
+                  <Code>Style</Code>: Adds inline styles to the HTML element.
+                </li>
+              </ul>
+            </blockquote>
           </Column>
           <Column>
             <b>Example:</b>
@@ -288,25 +298,27 @@ const Docs = () => {
               The NavItem component is responsible for creating Navigation links
               for the site.
             </p>
-            <b>props:</b>
-            <ul>
-              <li>
-                <Code>id</Code>: Assigns an ID to the HTML element.
-              </li>
-              <li>
-                <Code>className</Code>: Adds classes to the HTML element.
-              </li>
-              <li>
-                <Code>Style</Code>: Adds inline styles to the HTML element.
-              </li>
-              <li>
-                <Code>link</Code>: This prop takes in the link for the Navitem.
-              </li>
-              <li>
-                <Code>name</Code>: This prop takes in the name or text that will
-                be assigned to the button.
-              </li>
-            </ul>
+            <blockquote>
+              <b>props:</b>
+              <ul>
+                <li>
+                  <Code>id</Code>: Assigns an ID to the HTML element.
+                </li>
+                <li>
+                  <Code>className</Code>: Adds classes to the HTML element.
+                </li>
+                <li>
+                  <Code>Style</Code>: Adds inline styles to the HTML element.
+                </li>
+                <li>
+                  <Code>link</Code>: This prop takes in the link for the Navitem.
+                </li>
+                <li>
+                  <Code>name</Code>: This prop takes in the name or text that will
+                  be assigned to the button.
+                </li>
+              </ul>
+            </blockquote>
           </Column>
           <Column>
             <b>Example:</b>
@@ -328,25 +340,27 @@ const Docs = () => {
               should be used within a NavItem Component or any component you
               wish to add a dropdown menu too.
             </p>
-            <b>props:</b>
-            <ul>
-              <li>
-                <Code>id</Code>: Assigns an ID to the HTML element.
-              </li>
-              <li>
-                <Code>className</Code>: Adds classes to the HTML element.
-              </li>
-              <li>
-                <Code>Style</Code>: Adds inline styles to the HTML element.
-              </li>
-              <li>
-                <Code>link</Code>: This prop takes in the link for the Navitem.
-              </li>
-              <li>
-                <Code>name</Code>: This prop takes in the name or text that will
-                be assigned to the button.
-              </li>
-            </ul>
+            <blockquote>
+              <b>props:</b>
+              <ul>
+                <li>
+                  <Code>id</Code>: Assigns an ID to the HTML element.
+                </li>
+                <li>
+                  <Code>className</Code>: Adds classes to the HTML element.
+                </li>
+                <li>
+                  <Code>Style</Code>: Adds inline styles to the HTML element.
+                </li>
+                <li>
+                  <Code>link</Code>: This prop takes in the link for the Navitem.
+                </li>
+                <li>
+                  <Code>name</Code>: This prop takes in the name or text that will
+                  be assigned to the button.
+                </li>
+              </ul>
+            </blockquote>
           </Column>
           <Column>
             <b>Example:</b>
@@ -374,34 +388,36 @@ const Docs = () => {
               The Drawer component is used to create Drawer menus that will
               slide in from the side and contain the desired content.
             </p>
-            <b>props:</b>
-            <ul>
-              <li>
-                <Code>id</Code>: Assigns an ID to the HTML element.
-              </li>
-              <li>
-                <Code>className</Code>: Adds classes to the HTML element.
-              </li>
-              <li>
-                <Code>Style</Code>: Adds inline styles to the HTML element.
-              </li>
-              <li>
-                <Code>openIcon</Code>: This prop takes an icon in to be used for
-                the open drawer toggle container.
-              </li>
-              <li>
-                <Code>closeIcon</Code>: This prop takes an icon in to be used
-                for the close drawer toggle container.
-              </li>
-              <li>
-                <Code>openText</Code>: This prop takes text in to be used for
-                the open drawer toggle container.
-              </li>
-              <li>
-                <Code>closeText</Code>: This prop takes text in to be used for
-                the close drawer toggle container.
-              </li>
-            </ul>
+            <blockquote>
+              <b>props:</b>
+              <ul>
+                <li>
+                  <Code>id</Code>: Assigns an ID to the HTML element.
+                </li>
+                <li>
+                  <Code>className</Code>: Adds classes to the HTML element.
+                </li>
+                <li>
+                  <Code>Style</Code>: Adds inline styles to the HTML element.
+                </li>
+                <li>
+                  <Code>openIcon</Code>: This prop takes an icon in to be used for
+                  the open drawer toggle container.
+                </li>
+                <li>
+                  <Code>closeIcon</Code>: This prop takes an icon in to be used
+                  for the close drawer toggle container.
+                </li>
+                <li>
+                  <Code>openText</Code>: This prop takes text in to be used for
+                  the open drawer toggle container.
+                </li>
+                <li>
+                  <Code>closeText</Code>: This prop takes text in to be used for
+                  the close drawer toggle container.
+                </li>
+              </ul>
+            </blockquote>
           </Column>
           <Column>
             <b>Example:</b>
@@ -428,26 +444,28 @@ const Docs = () => {
               The DarkMode component is a toggle component that will toggle a
               light/dark mode version of the site.
             </p>
-            <b>props:</b>
-            <ul>
-              <li>
-                <Code>id</Code>: Assigns an ID to the HTML element.
-              </li>
-              <li>
-                <Code>className</Code>: Adds classes to the HTML element.
-              </li>
-              <li>
-                <Code>Style</Code>: Adds inline styles to the HTML element.
-              </li>
-              <li>
-                <Code>icon</Code>: This prop takes an icon that will be used for
-                the toggle button.
-              </li>
-              <li>
-                <Code>text</Code>: This prop takes text that will be used for
-                the toggle button.
-              </li>
-            </ul>
+            <blockquote>
+              <b>props:</b>
+              <ul>
+                <li>
+                  <Code>id</Code>: Assigns an ID to the HTML element.
+                </li>
+                <li>
+                  <Code>className</Code>: Adds classes to the HTML element.
+                </li>
+                <li>
+                  <Code>Style</Code>: Adds inline styles to the HTML element.
+                </li>
+                <li>
+                  <Code>icon</Code>: This prop takes an icon that will be used for
+                  the toggle button.
+                </li>
+                <li>
+                  <Code>text</Code>: This prop takes text that will be used for
+                  the toggle button.
+                </li>
+              </ul>
+            </blockquote>
           </Column>
           <Column>
             <b>Example:</b>
@@ -463,26 +481,28 @@ const Docs = () => {
               The Button component will add a styled button component to th
               site.
             </p>
-            <b>props:</b>
-            <ul>
-              <li>
-                <Code>id</Code>: Assigns an ID to the HTML element.
-              </li>
-              <li>
-                <Code>className</Code>: Adds classes to the HTML element.
-              </li>
-              <li>
-                <Code>Style</Code>: Adds inline styles to the HTML element.
-              </li>
-              <li>
-                <Code>icon</Code>: This prop takes an icon that will be used for
-                the toggle button.
-              </li>
-              <li>
-                <Code>text</Code>: This prop takes text that will be used for
-                the toggle button.
-              </li>
-            </ul>
+            <blockquote>
+              <b>props:</b>
+              <ul>
+                <li>
+                  <Code>id</Code>: Assigns an ID to the HTML element.
+                </li>
+                <li>
+                  <Code>className</Code>: Adds classes to the HTML element.
+                </li>
+                <li>
+                  <Code>Style</Code>: Adds inline styles to the HTML element.
+                </li>
+                <li>
+                  <Code>icon</Code>: This prop takes an icon that will be used for
+                  the toggle button.
+                </li>
+                <li>
+                  <Code>text</Code>: This prop takes text that will be used for
+                  the toggle button.
+                </li>
+              </ul>
+            </blockquote>
           </Column>
           <Column>
             <b>Example:</b>
@@ -496,28 +516,30 @@ const Docs = () => {
               The Tooltip component adds a tooltip that appears when the item is
               hovered.
             </p>
-            <b>props:</b>
-            <ul>
-              <li>
-                <Code>id</Code>: Assigns an ID to the HTML element.
-              </li>
-              <li>
-                <Code>className</Code>: Adds classes to the HTML element.
-              </li>
-              <li>
-                <Code>Style</Code>: Adds inline styles to the HTML element.
-              </li>
-              <li>
-                <Code>element</Code>: Component to which the tooltip is applied.
-              </li>
-              <li>
-                <Code>text</Code>: Text displayed in the tooltip.
-              </li>
-              <li>
-                <Code>position</Code>: Position of the tooltip. (top, right,
-                left, bottom)
-              </li>
-            </ul>
+            <blockquote>
+              <b>props:</b>
+              <ul>
+                <li>
+                  <Code>id</Code>: Assigns an ID to the HTML element.
+                </li>
+                <li>
+                  <Code>className</Code>: Adds classes to the HTML element.
+                </li>
+                <li>
+                  <Code>Style</Code>: Adds inline styles to the HTML element.
+                </li>
+                <li>
+                  <Code>element</Code>: Component to which the tooltip is applied.
+                </li>
+                <li>
+                  <Code>text</Code>: Text displayed in the tooltip.
+                </li>
+                <li>
+                  <Code>position</Code>: Position of the tooltip. (top, right,
+                  left, bottom)
+                </li>
+              </ul>
+            </blockquote>
           </Column>
           <Column>
             <b>Example:</b>
@@ -535,27 +557,29 @@ const Docs = () => {
               The Toast component displays a popup at the bottom of the screen
               when clicked.
             </p>
-            <b>props:</b>
-            <ul>
-              <li>
-                <Code>id</Code>: Assigns an ID to the HTML element.
-              </li>
-              <li>
-                <Code>className</Code>: Adds classes to the HTML element.
-              </li>
-              <li>
-                <Code>Style</Code>: Adds inline styles to the HTML element.
-              </li>
-              <li>
-                <Code>title</Code>: Title displayed in the popup.
-              </li>
-              <li>
-                <Code>text</Code>: Information text displayed in the popup.
-              </li>
-              <li>
-                <Code>duration</Code>: Duration of the popup before closing.
-              </li>
-            </ul>
+            <blockquote>
+              <b>props:</b>
+              <ul>
+                <li>
+                  <Code>id</Code>: Assigns an ID to the HTML element.
+                </li>
+                <li>
+                  <Code>className</Code>: Adds classes to the HTML element.
+                </li>
+                <li>
+                  <Code>Style</Code>: Adds inline styles to the HTML element.
+                </li>
+                <li>
+                  <Code>title</Code>: Title displayed in the popup.
+                </li>
+                <li>
+                  <Code>text</Code>: Information text displayed in the popup.
+                </li>
+                <li>
+                  <Code>duration</Code>: Duration of the popup before closing.
+                </li>
+              </ul>
+            </blockquote>
           </Column>
           <Column>
             <b>Example:</b>
@@ -574,27 +598,29 @@ const Docs = () => {
               The Notification component displays a popup at the top right when
               clicked.
             </p>
-            <b>props:</b>
-            <ul>
-              <li>
-                <Code>id</Code>: Assigns an ID to the HTML element.
-              </li>
-              <li>
-                <Code>className</Code>: Adds classes to the HTML element.
-              </li>
-              <li>
-                <Code>Style</Code>: Adds inline styles to the HTML element.
-              </li>
-              <li>
-                <Code>title</Code>: Title displayed in the popup.
-              </li>
-              <li>
-                <Code>text</Code>: Information text displayed in the popup.
-              </li>
-              <li>
-                <Code>duration</Code>: Duration of the popup before closing.
-              </li>
-            </ul>
+            <blockquote>
+              <b>props:</b>
+              <ul>
+                <li>
+                  <Code>id</Code>: Assigns an ID to the HTML element.
+                </li>
+                <li>
+                  <Code>className</Code>: Adds classes to the HTML element.
+                </li>
+                <li>
+                  <Code>Style</Code>: Adds inline styles to the HTML element.
+                </li>
+                <li>
+                  <Code>title</Code>: Title displayed in the popup.
+                </li>
+                <li>
+                  <Code>text</Code>: Information text displayed in the popup.
+                </li>
+                <li>
+                  <Code>duration</Code>: Duration of the popup before closing.
+                </li>
+              </ul>
+            </blockquote>
           </Column>
           <Column>
             <b>Example:</b>
@@ -610,27 +636,29 @@ const Docs = () => {
           <Column>
             <h4>Image</h4>
             <p>The Image component adds an image to the site.</p>
-            <b>props:</b>
-            <ul>
-              <li>
-                <Code>id</Code>: Assigns an ID to the HTML element.
-              </li>
-              <li>
-                <Code>className</Code>: Adds classes to the HTML element.
-              </li>
-              <li>
-                <Code>Style</Code>: Adds inline styles to the HTML element.
-              </li>
-              <li>
-                <Code>src</Code>: Source of the image.
-              </li>
-              <li>
-                <Code>alt</Code>: Alt text for the image.
-              </li>
-            </ul>
+            <blockquote>
+              <b>props:</b>
+              <ul>
+                <li>
+                  <Code>id</Code>: Assigns an ID to the HTML element.
+                </li>
+                <li>
+                  <Code>className</Code>: Adds classes to the HTML element.
+                </li>
+                <li>
+                  <Code>Style</Code>: Adds inline styles to the HTML element.
+                </li>
+                <li>
+                  <Code>src</Code>: Source of the image.
+                </li>
+                <li>
+                  <Code>alt</Code>: Alt text for the image.
+                </li>
+              </ul>
+            </blockquote>
           </Column>
           <Column>
-            <b>Example:</b>
+            <h6>Example:</h6>
             <CodeBlock>{`<Image src="/image.png" alt="Image alt text..." />`}</CodeBlock>
           </Column>
         </Row>
