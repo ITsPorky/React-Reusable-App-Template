@@ -3,6 +3,7 @@ import React, {
   useState,
   useRef,
   forwardRef,
+  useCallback,
 } from "react";
 import ReactDOM from "react-dom";
 
@@ -30,41 +31,39 @@ const ModalDialog = forwardRef(
     // #region Refs
     const divFgd = useRef(null);
     const divBgd = useRef(null);
-    const container = useRef(null);
-    const titleBar = useRef(null);
-    const titleContent = useRef(null);
-    const content = useRef(null);
     // #endregion
 
     // #region Methods
     // Pass methods up for parent access
     useImperativeHandle(ref, () => ({
-      toggleShow: () => toggleShow(),
-      show: () => show(),
-      hide: () => hide(),
+      toggleShow,
+      show,
+      hide,
       setTitle: (newTitle) => setModalTitle(newTitle),
       setContents: (newContents) => setModalContents(newContents),
     }));
 
-    const toggleShow = () => {
+    const toggleShow = useCallback(() => {
       if (isShown) {
         setZIndex();
+        // Injected close function
+        if (fnClose) fnClose();
         setShow(false);
       } else {
         setShow(true);
       }
-    };
+    }, [fnClose]);
 
-    const show = () => {
+    const show = useCallback(() => {
       setZIndex();
       setShow(true);
-    };
+    }, []);
 
-    const hide = () => {
+    const hide = useCallback(() => {
       // Injected close function
       if (fnClose) fnClose();
       setShow(false);
-    };
+    }, [fnClose]);
 
     const setZIndex = () => {
       const existingDialogs = document.getElementsByClassName(
@@ -86,34 +85,34 @@ const ModalDialog = forwardRef(
 
     // Modal Content to be added to Portal
     const modalContent = (
-      <div ref={divBgd} class="jdm-modal-background">
+      <div ref={divBgd} className="jdm-modal-background">
         <div ref={divFgd} className="jdm-modal-foreground">
           <div
-            ref={container}
             className={`jdm-modal-container ${cssClass}`}
             Style={`width:${width};height:${height};`}
+            role="dialog"
+            tabIndex={-1}
           >
-            <div ref={titleBar} className="jdm-title-modal-titlebar">
-              <p className="jdm-modal-title">
+            <div className="jdm-title-modal-titlebar">
+              <div className="jdm-modal-title">
                 <span
                   className="material-symbols-outlined"
                   Style="font-size:18px"
                 >
                   {icon}
                 </span>
-                <p ref={titleContent}>{modalTitle}</p>
-              </p>
+                <p>{modalTitle}</p>
+              </div>
               <span
                 className="material-symbols-outlined"
                 Style="float:right;cursor:pointer"
                 onClick={() => hide()}
+                role="button"
               >
                 close
               </span>
             </div>
-            <div ref={content} className="jdm-modal-content">
-              {modalContents}
-            </div>
+            <div className="jdm-modal-content">{modalContents}</div>
           </div>
         </div>
       </div>
@@ -127,9 +126,101 @@ const ModalDialog = forwardRef(
 export { ModalDialog };
 // #endregion Modal Dialog
 
-// #region Ask Questions
+// #region Ask Questions (Relies on ModalDialog)
 
-const AskQuestion = forwardRef(
+// const AskQuestion = forwardRef(
+//   (
+//     {
+//       contents = null,
+//       icon = null,
+//       title = "",
+//       fnYes = null,
+//       fnNo = null,
+//       portalRoot = document.body,
+//     },
+//     ref
+//   ) => {
+//     // #region State & Refs
+//     const [questionTitle, setQuestionTitle] = useState(title);
+//     const [questionContents, setQuestionContents] = useState(contents);
+
+//     const modalRef = useRef(null);
+//     // #endregion
+
+//     // #region Methods
+//     // Pass methods up for parent access
+//     useImperativeHandle(ref, () => ({
+//       show: () => show(),
+//       hide: () => hide(),
+//       setTitle: (newTitle) => setQuestionTitle(newTitle),
+//       setContents: (newContents) => setQuestionContents(newContents),
+//     }));
+
+//     const show = () => {
+//       modalRef.current.show(true);
+//     };
+
+//     const hide = () => {
+//       modalRef.current.show(false);
+//     };
+//     // #endregion
+
+//     const content = (
+//       <div className="jdm-askquestion-container">
+//         <div className="jdm-askquestion-wrapper">
+//           {icon && (
+//             <span
+//               className="material-symbols-outlined"
+//               style={"font-size:36px;margin-right:8px;align-self:flex-start"}
+//             >
+//               {icon}
+//             </span>
+//           )}
+//           {questionContents}
+//           <div className="jdm-askquestion-buttons">
+//             <span
+//               className="jdm-askquestion-yes"
+//               onClick={() => {
+//                 modalRef.current.hide();
+//                 fnYes && fnYes();
+//               }}
+//             >
+//               <span class="material-symbols-outlined">done</span>
+//               Yes
+//             </span>
+//             <span
+//               className="jdm-askquestion-no"
+//               onClick={() => {
+//                 modalRef.current.hide();
+//                 fnNo && fnNo();
+//               }}
+//             >
+//               <span class="material-symbols-outlined">close</span>
+//               No
+//             </span>
+//           </div>
+//         </div>
+//       </div>
+//     );
+
+//     return (
+//       <ModalDialog
+//         ref={modalRef}
+//         contents={content}
+//         title={questionTitle}
+//         width={"auto"}
+//         portalRoot={portalRoot}
+//       />
+//     );
+//   }
+// );
+
+// export { AskQuestion };
+
+// #endregion
+
+// #region ShowMessage
+const ShowMessage = forwardRef(
   (
     {
       contents = null,
@@ -141,31 +232,72 @@ const AskQuestion = forwardRef(
     },
     ref
   ) => {
-    // #region State & Refs
+    // #region State
+    const [isShown, setShow] = useState(false);
     const [questionTitle, setQuestionTitle] = useState(title);
     const [questionContents, setQuestionContents] = useState(contents);
+    // #endregion
 
-    const modalRef = useRef(null);
+    // #region Refs
+    const divFgd = useRef(null);
+    const divBgd = useRef(null);
     // #endregion
 
     // #region Methods
     // Pass methods up for parent access
     useImperativeHandle(ref, () => ({
-      show: () => show(),
-      hide: () => hide(),
+      toggleShow,
+      show,
+      hide,
       setTitle: (newTitle) => setQuestionTitle(newTitle),
       setContents: (newContents) => setQuestionContents(newContents),
     }));
 
-    const show = () => {
-      modalRef.current.show(true);
-    };
+    const toggleShow = useCallback(() => {
+      if (isShown) {
+        // Injected no function
+        if (fnNo) fnNo();
+        setShow(false);
+      } else {
+        setZIndex();
+        // Injected yes function
+        if (fnYes) fnYes();
+        setShow(true);
+      }
+    }, [fnYes, fnNo]);
 
-    const hide = () => {
-      modalRef.current.show(false);
+    const show = useCallback(() => {
+      setZIndex();
+      // Injected yes function
+      if (fnYes) fnYes();
+      setShow(true);
+    }, [fnYes]);
+
+    const hide = useCallback(() => {
+      // Injected no function
+      if (fnNo) fnNo();
+      setShow(false);
+    }, [fnNo]);
+
+    const setZIndex = () => {
+      const existingDialogs = document.getElementsByClassName(
+        "jdm-modal-foreground"
+      );
+      let highestZIndex = 1001;
+
+      for (let dialog of existingDialogs) {
+        let zIndex = parseInt(dialog.style.zIndex, 10);
+        if (!isNaN(zIndex) && zIndex > highestZIndex) highestZIndex = zIndex;
+      }
+
+      if (divBgd.current && divFgd.current) {
+        divBgd.current.style.zIndex = highestZIndex + 1;
+        divFgd.current.style.zIndex = highestZIndex + 2;
+      }
     };
     // #endregion
 
+    // Show Message to be added to Portal
     const content = (
       <div className="jdm-askquestion-container">
         <div className="jdm-askquestion-wrapper">
@@ -182,7 +314,7 @@ const AskQuestion = forwardRef(
             <span
               className="jdm-askquestion-yes"
               onClick={() => {
-                modalRef.current.hide();
+                hide();
                 fnYes && fnYes();
               }}
             >
@@ -192,7 +324,7 @@ const AskQuestion = forwardRef(
             <span
               className="jdm-askquestion-no"
               onClick={() => {
-                modalRef.current.hide();
+                hide();
                 fnNo && fnNo();
               }}
             >
@@ -203,19 +335,10 @@ const AskQuestion = forwardRef(
         </div>
       </div>
     );
-
-    return (
-      <ModalDialog
-        ref={modalRef}
-        contents={content}
-        title={questionTitle}
-        width={"auto"}
-        portalRoot={portalRoot}
-      />
-    );
+    // Component HTML
+    return isShown ? ReactDOM.createPortal(modalContent, portalRoot) : null;
   }
 );
 
-export { AskQuestion };
-
-// #endregion
+export { ShowMessage };
+// #endregion ShowMessage
