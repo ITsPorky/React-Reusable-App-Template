@@ -18,60 +18,63 @@ import NavMenu from "./components/common/Menu/NavMenu";
 import NavItem from "./components/common/Menu/NavItem";
 import DropdownMenu from "./components/common/Menu/DropdownMenu";
 import Docs from "./components/pages/Docs";
+import { ModalDialogProvider } from "./JDMAppCore/JDMAppCore";
 
 function App() {
   return (
-    <div className={`App`}>
-      <Router>
-        <Header>
-          {/* Nav menu */}
-          <NavMenu>
-            <NavItem link={"/React-Reusable-App-Template"} name={"Home"} />
-            <NavItem link={"/React-Reusable-App-Template/docs"} name={"Docs"} />
-            <NavItem link={"#"} name={"Dropdown"}>
-              <DropdownMenu>
-                <NavItem link={"/React-Reusable-App-Template"} name={"Home"} />
-                <NavItem
-                  link={"/React-Reusable-App-Template/demo"}
-                  name={"Demo"}
-                />
-                <NavItem
-                  link={"/React-Reusable-App-Template/jdmappcoredemo"}
-                  name={"JDMAppCoreDemo"}
-                />
-                <NavItem link={"#"} name={"Contact"} />
-              </DropdownMenu>
-            </NavItem>
-            <NavItem link={"#"} name={"Contact"} />
-          </NavMenu>
-          {/* END NavMenu END */}
-        </Header>
-        <main>
-          <Routes>
-            <Route
-              path="/React-Reusable-App-Template"
-              Component={Home}
-              element={<Navigate to="/React-Reusable-App-Template" />}
-            />
-            <Route path="/React-Reusable-App-Template/docs" Component={Docs} />
-            <Route path="/React-Reusable-App-Template/demo" Component={Demo} />
-            <Route
-              path="/React-Reusable-App-Template/jdmappcoredemo"
-              Component={JDMAppCoreDemo}
-            />
-            <Route
-              path="/React-Reusable-App-Template/docs"
-              element={<Navigate to={Docs} />}
-            />
-            <Route
-              path="/React-Reusable-App-Template/demo"
-              element={<Navigate to={Demo} />}
-            />
-          </Routes>
-        </main>
-      </Router>
-      <Footer />
-    </div>
+    <ModalDialogProvider>
+      <div className={`App`}>
+        <Router>
+          <Header>
+            {/* Nav menu */}
+            <NavMenu>
+              <NavItem link={"/React-Reusable-App-Template"} name={"Home"} />
+              <NavItem link={"/React-Reusable-App-Template/docs"} name={"Docs"} />
+              <NavItem link={"#"} name={"Dropdown"}>
+                <DropdownMenu>
+                  <NavItem link={"/React-Reusable-App-Template"} name={"Home"} />
+                  <NavItem
+                    link={"/React-Reusable-App-Template/demo"}
+                    name={"Demo"}
+                  />
+                  <NavItem
+                    link={"/React-Reusable-App-Template/jdmappcoredemo"}
+                    name={"JDMAppCoreDemo"}
+                  />
+                  <NavItem link={"#"} name={"Contact"} />
+                </DropdownMenu>
+              </NavItem>
+              <NavItem link={"#"} name={"Contact"} />
+            </NavMenu>
+            {/* END NavMenu END */}
+          </Header>
+          <main>
+            <Routes>
+              <Route
+                path="/React-Reusable-App-Template"
+                Component={Home}
+                element={<Navigate to="/React-Reusable-App-Template" />}
+              />
+              <Route path="/React-Reusable-App-Template/docs" Component={Docs} />
+              <Route path="/React-Reusable-App-Template/demo" Component={Demo} />
+              <Route
+                path="/React-Reusable-App-Template/jdmappcoredemo"
+                Component={JDMAppCoreDemo}
+              />
+              <Route
+                path="/React-Reusable-App-Template/docs"
+                element={<Navigate to={Docs} />}
+              />
+              <Route
+                path="/React-Reusable-App-Template/demo"
+                element={<Navigate to={Demo} />}
+              />
+            </Routes>
+          </main>
+        </Router>
+        <Footer />
+      </div>
+    </ModalDialogProvider>
   );
 }
 
