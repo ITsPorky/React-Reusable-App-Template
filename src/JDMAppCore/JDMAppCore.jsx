@@ -18,8 +18,8 @@ const ModalDialogContext = createContext(null);
 const ModalDialogProvider = ({ children }) => {
   const [modalDialog, setModalDialog] = useState(null);
 
-  const showModalDialog = (constents, width, height, icon, title, cssClass, fnClose, portalRoot) => {
-    setModalDialog({ constents, width, height, icon, title, cssClass, fnClose, portalRoot });
+  const showModalDialog = (contents, width, height, icon, title, cssClass, fnClose, portalRoot) => {
+    setModalDialog({ contents, width, height, icon, title, cssClass, fnClose, portalRoot });
   };
 
   const hideModalDialog = () => {
@@ -27,20 +27,20 @@ const ModalDialogProvider = ({ children }) => {
   };
 
   return (
-    <ModalDialog.Provider value={{ showModalDialog, hideModalDialog }}>
+    <ModalDialogContext.Provider value={{ showModalDialog, hideModalDialog }}>
       {children}
       {modalDialog && 
       <ModalDialog 
-        contents={contents}
-        width={width}
-        height={height}
-        icon={icon}
-        title={title}
-        cssClass={cssClass}
-        fnClose={fnClose}
-        portalRoot={portalRoot}
+      contents={modalDialog.contents}
+      width={modalDialog.width}
+      height={modalDialog.height}
+      icon={modalDialog.icon}
+      title={modalDialog.title}
+      cssClass={modalDialog.cssClass}
+      fnClose={modalDialog.fnClose}
+      portalRoot={modalDialog.portalRoot}
       />}
-    </ModalDialog.Provider>
+    </ModalDialogContext.Provider>
   );
 };
 
@@ -48,7 +48,7 @@ const ModalDialogProvider = ({ children }) => {
 export const useModalDialog = () => {
   const context = useContext(ModalDialogContext);
   if (!context) {
-    throw new Error('createModalDialog must be used within a ModalDIalogProvider');
+    throw new Error('useModalDialog must be used within a ModalDialogProvider');
   }
   return context;
 };
@@ -98,7 +98,7 @@ const ModalDialog = forwardRef(
       } else {
         setShow(true);
       }
-    }, [fnClose]);
+    }, [fnClose, isShown]);
 
     const show = useCallback(() => {
       setZIndex();
@@ -383,7 +383,7 @@ const ShowMessage = forwardRef(
       </div>
     );
     // Component HTML
-    return isShown ? ReactDOM.createPortal(modalContent, portalRoot) : null;
+    return isShown ? ReactDOM.createPortal(content, portalRoot) : null;
   }
 );
 

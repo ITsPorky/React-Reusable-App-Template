@@ -4,11 +4,18 @@ import Row from "../common/Row";
 import Column from "../common/Column";
 import FullSection from "../common/FullSection";
 import Button from "../common/Button";
+import { useModalDialog } from "../../JDMAppCore/JDMAppCore";
 // import { AskQuestion, ModalDialog } from "../../JDMAppCore/JDMAppCore";
 
 const JDMAppCoreDemo = () => {
   // const modalRef = useRef(null);
   // const askQuestionRef = useRef(null);
+
+  const { showModalDialog } = useModalDialog();
+
+  const createModalDialog = () => {
+    showModalDialog();
+  };
 
   const contents = (
     <div>
@@ -34,6 +41,7 @@ const JDMAppCoreDemo = () => {
             <p>This Page showcases each component and styles.</p>
             <Button
               onClick={() => {
+                createModalDialog(contents);
                 // modalRef.current.setTitle("New Title 1!");
                 // modalRef.current.setContents(contents);
                 // modalRef.current.show();
@@ -42,6 +50,7 @@ const JDMAppCoreDemo = () => {
             />
             <Button
               onClick={() => {
+                createModalDialog('content descripton stuff');
                 // modalRef.current.setTitle("New Title 2!");
                 // modalRef.current.setContents(<p>Content 2</p>);
                 // modalRef.current.show();
